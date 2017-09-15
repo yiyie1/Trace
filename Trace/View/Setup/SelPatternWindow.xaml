@@ -1,0 +1,10 @@
+﻿<Window x:Class="Trace.SelPatternWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="选择模式" Height="300" Width="600" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    <Grid>
+        <Button Name="BtnMeasure" Content="测量模式" FontSize="30" HorizontalAlignment="Left" Margin="57,28,0,0" VerticalAlignment="Top" Width="203" Height="203"/>
+        <Button Name="BtnAnalyze" Content="分析模式" FontSize="30" HorizontalAlignment="Left" Margin="336,28,0,0" VerticalAlignment="Top" Width="200" Height="200"/>
+
+    </Grid>
+</Window>

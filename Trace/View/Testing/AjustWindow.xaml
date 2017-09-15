@@ -1,0 +1,141 @@
+﻿<Window x:Class="Trace.AjustWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:Trace"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:chartingToolkit="clr-namespace:System.Windows.Controls.DataVisualization.Charting;assembly=System.Windows.Controls.DataVisualization.Toolkit"
+        Title="校准设置" Height="480" Width="500" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Loaded="AjustWin_Loaded">
+
+    <Window.Resources>
+        
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="12*"/>
+            <RowDefinition Height="23*"/>
+            <RowDefinition Height="286*"/>
+        </Grid.RowDefinitions>
+        <Grid  Height="Auto" Width="Auto" Margin="0,0,0,0" Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="25*"/>
+                <ColumnDefinition Width="60*"/>
+                <ColumnDefinition Width="12*"/>
+                <ColumnDefinition Width="60*"/>
+                <ColumnDefinition Width="12*"/>
+                <ColumnDefinition Width="60*"/>
+                <ColumnDefinition Width="270*"/>
+            </Grid.ColumnDefinitions>
+            <Button Name="btnContinuousScan" Content="连续扫描" Grid.Column="1" HorizontalAlignment="Stretch" Height="Auto" Margin="0,0,0,0" VerticalAlignment="Stretch" Width="Auto" Click="btnContinuousScan_Click"/>
+            <Button Name="btnPauseScan" Content="暂停扫描" Grid.Column="3" HorizontalAlignment="Stretch" Height="Auto" Margin="0,0,0,0" VerticalAlignment="Stretch" Width="Auto" Click="btnPauseScan_Click"/>
+            <Button Name="BtnScanOnce" Content="单次扫描" Grid.Column="5" HorizontalAlignment="Stretch" Height="Auto" Margin="0,0,0,0" VerticalAlignment="Stretch" Width="Auto" Click="BtnScanOnce_Click"/>
+        </Grid>
+        <Grid Height="Auto" Width="Auto" Margin="0,0,0,0" Grid.Row="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="11*"/>
+                <RowDefinition Height="80*"/>
+                <RowDefinition Height="148*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="239*"/>
+                <ColumnDefinition Width="249*"/>
+            </Grid.ColumnDefinitions>
+            <GroupBox Header="积分时间" HorizontalAlignment="Stretch" Height="Auto" Margin="0" Grid.Row="1" VerticalAlignment="Stretch" Width="Auto">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch" Height="50" Margin="0" VerticalAlignment="Center" Width="Auto">
+                    <Label Content="积分时间：" HorizontalAlignment="Left"  Height="30" Margin="10,0,0,0" Width="Auto"/>
+                    <TextBox Name="tBIntegral" Text="100" Height="30" Margin="10,10,0,10" VerticalAlignment="Center" Width="35" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" DataObject.Pasting="TextBox_Pasting" PreviewKeyDown="TextBox_PreviewKeyDown" InputMethod.IsInputMethodEnabled="False" PreviewTextInput="TextBox_PreviewTextInput"/>
+                    <StackPanel Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,3,5,3">
+                        <Button x:Name="btnIncreaseTime" VerticalAlignment="Center" Style="{DynamicResource ButtonStyle_CaptionBtn}" ContentTemplate="{DynamicResource DataTemplate_UpArrow}" HorizontalAlignment="Left" Click="btnIncreaseTime_Click"/>
+                        <Button x:Name="btnDecreaseTime" VerticalAlignment="Center"  Margin="0" Style="{DynamicResource ButtonStyle_CaptionBtn}" ContentTemplate="{DynamicResource DataTemplate_DownArrow}" HorizontalAlignment="Left" Click="btnDecreaseTime_Click"/>
+                        <!--TODO 按钮图案没有显示-->
+                    </StackPanel>
+                    <ComboBox  Name="CbUnit" Height="19" Margin="0" VerticalAlignment="Center" Width="55" SelectedIndex="0">
+                    </ComboBox>
+                </StackPanel>
+            </GroupBox>
+            <GroupBox Header="平滑" HorizontalAlignment="Stretch" Height="Auto" Margin="0" Grid.Row="1" Grid.Column="1" VerticalAlignment="Stretch" Width="Auto">
+                <Grid HorizontalAlignment="Stretch" Height="Auto" Margin="0" VerticalAlignment="Stretch" Width="Auto">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="21*"/>
+                        <RowDefinition Height="31*"/>
+                        <RowDefinition Height="21*"/>
+                        <RowDefinition Height="35*"/>
+                        <RowDefinition Height="31*"/>
+                    </Grid.RowDefinitions>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch" Height="50" Margin="0" VerticalAlignment="Center" Width="Auto" Grid.Row="1">
+                        <Label Content="平均次数：" HorizontalAlignment="Left"  Height="30" Margin="20,0,0,0" Width="Auto"/>
+                        <TextBox Name="tBAverTimes" Height="30" Margin="10,10,0,10" Text="1" VerticalAlignment="Center" Width="35" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" DataObject.Pasting="TextBox_Pasting" PreviewKeyDown="TextBox_PreviewKeyDown" InputMethod.IsInputMethodEnabled="False" PreviewTextInput="TextBox_PreviewTextInput"/>
+                        <StackPanel Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,3,5,3">
+                            <Button x:Name="btnIncreaseTimes" VerticalAlignment="Center" Style="{DynamicResource ButtonStyle_CaptionBtn}" ContentTemplate="{DynamicResource DataTemplate_UpArrow}" HorizontalAlignment="Left" Click="btnIncreaseTimes_Click"/>
+                            <Button x:Name="btnDecreaseTimes" VerticalAlignment="Center"  Margin="0" Style="{DynamicResource ButtonStyle_CaptionBtn}" ContentTemplate="{DynamicResource DataTemplate_DownArrow}" HorizontalAlignment="Left" Click="btnDecreaseTimes_Click"/>
+                            <!--TODO 按钮图案没有显示-->
+                        </StackPanel>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch" Height="50" Margin="0" VerticalAlignment="Center" Width="Auto" Grid.Row="3">
+                        <Label Content="平滑度：" HorizontalAlignment="Left"  Height="30" Margin="20,0,0,0" Width="Auto"/>
+                        <TextBox Name="tBSmooth" Height="30" Margin="10,10,0,10" Text="1" VerticalAlignment="Center" Width="35" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" DataObject.Pasting="TextBox_Pasting" PreviewKeyDown="TextBox_PreviewKeyDown" InputMethod.IsInputMethodEnabled="False" PreviewTextInput="TextBox_PreviewTextInput"/>
+                        <StackPanel Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,3,5,3">
+                            <Button x:Name="btnIncreaseSmooth" VerticalAlignment="Center" Style="{DynamicResource ButtonStyle_CaptionBtn}" ContentTemplate="{DynamicResource DataTemplate_UpArrow}" HorizontalAlignment="Left" Click="btnIncreaseSmooth_Click"/>
+                            <Button x:Name="btnDecreaseSmooth" VerticalAlignment="Center"  Margin="0" Style="{DynamicResource ButtonStyle_CaptionBtn}" ContentTemplate="{DynamicResource DataTemplate_DownArrow}" HorizontalAlignment="Left" Click="btnDecreaseSmooth_Click"/>
+                            <!--TODO 按钮图案没有显示-->
+                        </StackPanel>
+                    </StackPanel>
+                </Grid>
+            </GroupBox>
+            <chartingToolkit:Chart x:Name="TestResultChart" HorizontalAlignment="Stretch" Height="Auto" VerticalAlignment="Stretch" Width="auto" RenderTransformOrigin="0.715,0.873" Grid.Row="2">
+                <chartingToolkit:LineSeries ItemsSource="{Binding}" Title="光谱" IndependentValueBinding="{Binding Key}" DependentValueBinding="{Binding Value}" DataPointStyle="{StaticResource MyLineDataPointStyle}" />
+                <chartingToolkit:Chart.LegendStyle>
+                    <Style TargetType="Control">
+                        <Setter Property="Width" Value="0" />
+                        <Setter Property="Height" Value="0" />
+                    </Style>
+                </chartingToolkit:Chart.LegendStyle>
+                <chartingToolkit:Chart.Axes>
+                    <chartingToolkit:LinearAxis  Orientation="X" Title="波长(nm)" ShowGridLines="True" ></chartingToolkit:LinearAxis>
+                    <chartingToolkit:LinearAxis Orientation="Y" Minimum="0" Maximum="65535" ShowGridLines="True"></chartingToolkit:LinearAxis>
+                </chartingToolkit:Chart.Axes>
+            </chartingToolkit:Chart>
+
+            <Grid Grid.Column="1" HorizontalAlignment="Stretch" Height="Auto" Margin="0" Grid.Row="2" VerticalAlignment="Stretch" Width="Auto">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="150*"/>
+                    <ColumnDefinition Width="100*"/>
+                    <ColumnDefinition Width="20*"/>
+                </Grid.ColumnDefinitions>
+                <Grid HorizontalAlignment="Stretch" Height="Auto" Margin="0" VerticalAlignment="Stretch" Width="Auto">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="128*"/>
+                        <RowDefinition Height="9*"/>
+                        <RowDefinition Height="26*"/>
+                        <RowDefinition Height="25*"/>
+                    </Grid.RowDefinitions>
+                    <Image Name="Image" Grid.Row="0" HorizontalAlignment="Center" Height="100" Margin="0" VerticalAlignment="Center" Width="100" Source="/Resource/Image/liangdeng.png"/>
+                    <Button Content="关闭光源挡板" HorizontalAlignment="Center" Height="25" Margin="0,0,0,0" Grid.Row="2" VerticalAlignment="Top" Width="80" Visibility="Collapsed"/>
+                </Grid>
+                <Grid Grid.Column="1" HorizontalAlignment="Stretch" Height="Auto" Margin="0" VerticalAlignment="Stretch" Width="Auto">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="10*"/>
+                        <RowDefinition Height="15*"/>
+
+                        <RowDefinition Height="15*"/>
+
+                        <RowDefinition Height="15*"/>
+
+                        <RowDefinition Height="15*"/>
+                        <RowDefinition Height="15*"/>
+                        <RowDefinition Height="15*"/>
+                    </Grid.RowDefinitions>
+
+                    <Button Name="btnSaveRef" IsEnabled="False" Content="存储参考光谱" HorizontalAlignment="Stretch" Height="Auto" Margin="0" Grid.Row="1" VerticalAlignment="Stretch" Width="Auto" Click="btnSaveRef_Click"/>
+                    <Button Name="btnSaveDark" IsEnabled="False" Content="存储暗光谱" HorizontalAlignment="Stretch" Height="Auto" Margin="0,0,0,0" Grid.Row="3" VerticalAlignment="Stretch" Width="Auto" Click="btnSaveDark_Click"/>
+                    <Button Name="btnStartTest" IsEnabled="False" Content="开始测量" HorizontalAlignment="Stretch" Height="Auto" Margin="0" Grid.Row="5" VerticalAlignment="Stretch" Width="Auto" Click="btnStartTest_Click"/>
+                </Grid>
+            </Grid>
+        </Grid>
+
+
+    </Grid>
+</Window>

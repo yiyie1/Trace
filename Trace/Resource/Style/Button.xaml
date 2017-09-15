@@ -1,0 +1,708 @@
+﻿<ResourceDictionary
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:Microsoft_Windows_Themes="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d">
+	<Style x:Key="ButtonFocusVisual">
+		<Setter Property="Control.Template">
+			<Setter.Value>
+				<ControlTemplate>
+					<Rectangle Margin="2" SnapsToDevicePixels="true" Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" StrokeThickness="1" StrokeDashArray="1 2"/>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+	<!-- Resource dictionary entries should be defined here. -->
+	<LinearGradientBrush x:Key="ButtonNormalBackground" EndPoint="0,1" StartPoint="0,0">
+		<GradientStop Color="#F3F3F3" Offset="0"/>
+		<GradientStop Color="#EBEBEB" Offset="0.5"/>
+		<GradientStop Color="#DDDDDD" Offset="0.5"/>
+		<GradientStop Color="#CDCDCD" Offset="1"/>
+	</LinearGradientBrush>
+	<SolidColorBrush x:Key="ButtonNormalBorder" Color="#FF707070"/>
+	<Style x:Key="ToggleButtonStyle_Playpause" TargetType="{x:Type ToggleButton}">
+		<Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+		<Setter Property="Focusable" Value="True"/>
+		<Setter Property="Background" Value="{StaticResource ButtonNormalBackground}"/>
+		<Setter Property="BorderBrush" Value="{StaticResource ButtonNormalBorder}"/>
+		<Setter Property="BorderThickness" Value="1"/>
+		<Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+		<Setter Property="HorizontalContentAlignment" Value="Center"/>
+		<Setter Property="VerticalContentAlignment" Value="Center"/>
+		<Setter Property="Padding" Value="1"/>
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="{x:Type ToggleButton}">
+					<Grid Width="32" Height="32">
+						<Ellipse Fill="#4C898989" Stroke="#99FFFFFF" StrokeThickness="2"/>
+						<Ellipse x:Name="Hover" Fill="#4CFFFFFF" Stroke="#99FFFFFF" Visibility="Hidden" StrokeThickness="2"/>
+						<Canvas x:Name="icons_play" ClipToBounds="True" HorizontalAlignment="Center" Height="20" UseLayoutRounding="False" VerticalAlignment="Center" Width="20" RenderTransformOrigin="0.5,0.5">
+							<Canvas.RenderTransform>
+								<TransformGroup>
+									<ScaleTransform/>
+									<SkewTransform/>
+									<RotateTransform/>
+									<TranslateTransform/>
+								</TransformGroup>
+							</Canvas.RenderTransform>
+							<Path x:Name="play" Data="F1M17.922,11.024C17.922,11.024 1.959,20.197 1.959,20.197 1.959,20.197 1.959,1.851 1.959,1.851 1.959,1.851 17.922,11.024 17.922,11.024z" Fill="#FFFFFFFF" Height="22" Canvas.Left="1" Canvas.Top="-1" Width="19"/>
+							<Path x:Name="pause"  Data="F1M9.979,1.954C9.979,1.954 14.01,1.954 14.01,1.954 14.01,1.954 14.01,17.958 14.01,17.958 14.01,17.958 9.979,17.958 9.979,17.958 9.979,17.958 9.979,1.954 9.979,1.954z M1.958,1.954C1.958,1.954 5.99,1.954 5.99,1.954 5.99,1.954 5.99,17.958 5.99,17.958 5.99,17.958 1.958,17.958 1.958,17.958 1.958,17.958 1.958,1.954 1.958,1.954z" Fill="#FFFFFFFF" Height="19" Canvas.Left="2" Canvas.Top="0" Width="16" Visibility="Hidden"/>
+						</Canvas>
+					</Grid>
+					<ControlTemplate.Triggers>
+						<Trigger Property="IsPressed" Value="True">
+							<Setter Property="RenderTransform" TargetName="icons_play">
+								<Setter.Value>
+									<TransformGroup>
+										<ScaleTransform/>
+										<SkewTransform/>
+										<RotateTransform/>
+										<TranslateTransform Y="1"/>
+									</TransformGroup>
+								</Setter.Value>
+							</Setter>
+						</Trigger>
+						<Trigger Property="IsMouseOver" Value="True">
+							<Setter Property="Visibility" TargetName="Hover" Value="Visible"/>
+						</Trigger>
+						<Trigger Property="IsKeyboardFocused" Value="true"/>
+						<Trigger Property="IsChecked" Value="true">
+							<Setter Property="Visibility" TargetName="play" Value="Hidden"/>
+							<Setter Property="Visibility" TargetName="pause" Value="Visible"/>
+						</Trigger>
+						<Trigger Property="IsEnabled" Value="false">
+							<Setter Property="Opacity" Value="0.5"/>
+						</Trigger>
+					</ControlTemplate.Triggers>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+	<Style x:Key="ToggleButtonStyle_Pin" TargetType="{x:Type ToggleButton}">
+		<Setter Property="FocusVisualStyle" Value="{StaticResource ButtonFocusVisual}"/>
+		<Setter Property="Background" Value="{StaticResource ButtonNormalBackground}"/>
+		<Setter Property="BorderBrush" Value="{StaticResource ButtonNormalBorder}"/>
+		<Setter Property="BorderThickness" Value="1"/>
+		<Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+		<Setter Property="HorizontalContentAlignment" Value="Center"/>
+		<Setter Property="VerticalContentAlignment" Value="Center"/>
+		<Setter Property="Padding" Value="1"/>
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="{x:Type ToggleButton}">
+					<Grid Width="20" Height="20" Background="Transparent">
+						<Canvas x:Name="canvas" Margin="4,2.5" Opacity="0.6" RenderTransformOrigin="0.5,0.5">
+							<Canvas.RenderTransform>
+								<TransformGroup>
+									<ScaleTransform/>
+									<SkewTransform/>
+									<RotateTransform Angle="45"/>
+									<TranslateTransform/>
+								</TransformGroup>
+							</Canvas.RenderTransform>
+							<Path x:Name="path" Data="F1M6.994,10.969C6.994,10.969 6.994,14.906 6.994,14.906 6.994,14.906 4.98,14.906 4.98,14.906 4.98,14.906 4.98,10.969 4.98,10.969 4.98,10.969 1,10.969 1,10.969 1,10.969 1,9 1,9 1,9 2.969,9 2.969,9 2.969,9 2.969,1.969 2.969,1.969 2.969,1.969 9,1.969 9,1.969 9,1.969 9,9 9,9 9,9 11,9 11,9 11,9 11,10.969 11,10.969 11,10.969 6.994,10.969 6.994,10.969z" Height="15" Width="12" HorizontalAlignment="Center" VerticalAlignment="Center" Stretch="Fill" Fill="White"/>
+						</Canvas>
+					</Grid>
+					<ControlTemplate.Triggers>
+						<Trigger Property="IsPressed" Value="True">
+							<Setter Property="RenderTransform" TargetName="canvas">
+								<Setter.Value>
+									<TransformGroup>
+										<ScaleTransform/>
+										<SkewTransform/>
+										<RotateTransform Angle="45"/>
+										<TranslateTransform Y="1"/>
+									</TransformGroup>
+								</Setter.Value>
+							</Setter>
+						</Trigger>
+						<Trigger Property="IsMouseOver" Value="True">							
+							<Setter Property="Opacity" TargetName="canvas" Value="1"/>
+						</Trigger>
+						<Trigger Property="IsKeyboardFocused" Value="true"/>
+						<Trigger Property="IsChecked" Value="true">
+							<Setter Property="RenderTransform" TargetName="canvas">
+								<Setter.Value>
+									<TransformGroup>
+										<ScaleTransform/>
+										<SkewTransform/>
+										<RotateTransform Angle="0"/>
+										<TranslateTransform Y="1"/>
+									</TransformGroup>
+								</Setter.Value>
+							</Setter>
+						</Trigger>
+						<Trigger Property="IsEnabled" Value="false">
+							<Setter Property="Foreground" Value="#ADADAD"/>
+						</Trigger>
+					</ControlTemplate.Triggers>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+	<Style x:Key="ButtonStyle_PlayButton" TargetType="{x:Type Button}">
+		<Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+		<Setter Property="Focusable" Value="False"/>
+		<Setter Property="Background" Value="{StaticResource ButtonNormalBackground}"/>
+		<Setter Property="BorderBrush" Value="{StaticResource ButtonNormalBorder}"/>
+		<Setter Property="BorderThickness" Value="1"/>
+		<Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+		<Setter Property="HorizontalContentAlignment" Value="Center"/>
+		<Setter Property="VerticalContentAlignment" Value="Center"/>
+		<Setter Property="Padding" Value="1"/>
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="{x:Type Button}">
+					<Grid Width="32" Height="32">
+						<Ellipse Fill="#4C898989" Stroke="#99FFFFFF" StrokeThickness="2"/>
+						<Ellipse x:Name="Hover" Fill="#4CFFFFFF" Stroke="#99FFFFFF" Visibility="Hidden" StrokeThickness="2"/>
+						<ContentPresenter x:Name="contentPresenter" Margin="5" RenderTransformOrigin="0.5,0.5">
+							<ContentPresenter.RenderTransform>
+								<TransformGroup>
+									<ScaleTransform/>
+									<SkewTransform/>
+									<RotateTransform/>
+									<TranslateTransform/>
+								</TransformGroup>
+							</ContentPresenter.RenderTransform>
+						</ContentPresenter>
+					</Grid>
+					<ControlTemplate.Triggers>
+						<Trigger Property="IsPressed" Value="True">
+							<Setter Property="RenderTransform" TargetName="contentPresenter">
+								<Setter.Value>
+									<TransformGroup>
+										<ScaleTransform/>
+										<SkewTransform/>
+										<RotateTransform/>
+										<TranslateTransform Y="1"/>
+									</TransformGroup>
+								</Setter.Value>
+							</Setter>
+						</Trigger>
+						<Trigger Property="IsMouseOver" Value="True">
+							<Setter Property="Visibility" TargetName="Hover" Value="Visible"/>
+						</Trigger>
+						<Trigger Property="IsKeyboardFocused" Value="true"/>
+						<Trigger Property="ToggleButton.IsChecked" Value="true"/>
+						<Trigger Property="IsEnabled" Value="false">
+							<Setter Property="Foreground" Value="#ADADAD"/>
+							<Setter Property="Opacity" Value="0.5"/>
+						</Trigger>
+					</ControlTemplate.Triggers>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+	<Style x:Key="ButtonStyle_CaptionBtn" TargetType="{x:Type Button}">
+		<Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+		<Setter Property="Focusable" Value="False"/>
+		<Setter Property="Background" Value="{StaticResource ButtonNormalBackground}"/>
+		<Setter Property="BorderBrush" Value="{StaticResource ButtonNormalBorder}"/>
+		<Setter Property="BorderThickness" Value="1"/>
+		<Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+		<Setter Property="HorizontalContentAlignment" Value="Center"/>
+		<Setter Property="VerticalContentAlignment" Value="Center"/>
+		<Setter Property="Padding" Value="1"/>
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="{x:Type Button}">
+					<Grid Background="#00000000">
+						<ContentPresenter x:Name="contentPresenter" Opacity="0.6" RenderTransformOrigin="0.5,0.5">
+							<ContentPresenter.RenderTransform>
+								<TransformGroup>
+									<ScaleTransform/>
+									<SkewTransform/>
+									<RotateTransform/>
+									<TranslateTransform/>
+								</TransformGroup>
+							</ContentPresenter.RenderTransform>
+						</ContentPresenter>
+					</Grid>
+					<ControlTemplate.Triggers>
+						<Trigger Property="IsMouseOver" Value="True">
+							<Setter Property="Opacity" TargetName="contentPresenter" Value="1"/>
+						</Trigger>
+						<Trigger Property="IsPressed" Value="True">
+							<Setter Property="RenderTransform" TargetName="contentPresenter">
+								<Setter.Value>
+									<TransformGroup>
+										<ScaleTransform/>
+										<SkewTransform/>
+										<RotateTransform/>
+										<TranslateTransform Y="1"/>
+									</TransformGroup>
+								</Setter.Value>
+							</Setter>
+						</Trigger>
+						<Trigger Property="IsKeyboardFocused" Value="true"/>
+						<Trigger Property="ToggleButton.IsChecked" Value="true"/>
+						<Trigger Property="IsEnabled" Value="false">
+							<Setter Property="Opacity" Value="0.5"/>
+						</Trigger>
+					</ControlTemplate.Triggers>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+	<Style x:Key="ToggleButtonStyle_Volume" TargetType="{x:Type ToggleButton}">
+		<Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+		<Setter Property="Focusable" Value="False"/>
+		<Setter Property="Background" Value="{StaticResource ButtonNormalBackground}"/>
+		<Setter Property="BorderBrush" Value="{StaticResource ButtonNormalBorder}"/>
+		<Setter Property="BorderThickness" Value="1"/>
+		<Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+		<Setter Property="HorizontalContentAlignment" Value="Center"/>
+		<Setter Property="VerticalContentAlignment" Value="Center"/>
+		<Setter Property="Padding" Value="1"/>
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="{x:Type ToggleButton}">
+					<Grid Width="24" Height="24" Background="#00000000">
+						<Canvas x:Name="icons_play" ClipToBounds="True" HorizontalAlignment="Center" Height="20" UseLayoutRounding="False" VerticalAlignment="Center" Width="20">
+							<Path x:Name="形状_1" Data="F1M14.302,4.141C15.772,5.195 16.776,7.303 16.776,9.734 16.776,12.182 15.757,14.303 14.269,15.35 14.269,15.35 13.23,13.967 13.23,13.967 14.415,13.227 15.239,11.612 15.239,9.734 15.239,7.849 14.41,6.23 13.219,5.493 13.219,5.493 14.302,4.141 14.302,4.141z M10.801,2.287C10.801,2.287 10.801,17.896 10.801,17.896 10.801,17.896 4.722,13.31 4.722,13.31 4.722,13.31 1.167,13.31 1.167,13.31 1.167,13.31 1.167,6.873 1.167,6.873 1.167,6.873 4.722,6.873 4.722,6.873 4.722,6.873 10.801,2.287 10.801,2.287z M16.441,1.472C18.583,3.243 20.053,6.281 20.053,9.734 20.053,13.247 18.532,16.331 16.326,18.088 16.326,18.088 15.368,16.812 15.368,16.812 17.312,15.344 18.608,12.724 18.608,9.734 18.608,6.784 17.346,4.194 15.444,2.716 15.444,2.716 16.441,1.472 16.441,1.472z" Fill="White" Height="20" Canvas.Left="-1" Canvas.Top="0" Width="22"/>
+							<Path x:Name="形状_1_副本_3" Data="F1M19.099,7.409C19.099,7.409 14.691,11.818 14.691,11.818 15.179,12.116 15.746,12.297 16.359,12.297 18.137,12.297 19.578,10.856 19.578,9.078 19.578,8.465 19.397,7.897 19.099,7.409z M16.359,5.859C14.582,5.859 13.141,7.3 13.141,9.078 13.141,9.789 13.378,10.44 13.769,10.973 13.769,10.973 18.254,6.487 18.254,6.487 17.721,6.097 17.07,5.859 16.359,5.859z M16.359,4.562C18.853,4.562 20.875,6.584 20.875,9.078 20.875,11.572 18.853,13.594 16.359,13.594 13.865,13.594 11.844,11.572 11.844,9.078 11.844,6.584 13.865,4.562 16.359,4.562z M10.801,1.287C10.801,1.287 10.801,16.896 10.801,16.896 10.801,16.896 4.722,12.31 4.722,12.31 4.722,12.31 1.167,12.31 1.167,12.31 1.167,12.31 1.167,5.873 1.167,5.873 1.167,5.873 4.722,5.873 4.722,5.873 4.722,5.873 10.801,1.287 10.801,1.287z" Fill="White" Height="18" Canvas.Left="-1" Canvas.Top="1" Width="22" Visibility="Hidden"/>
+						</Canvas>
+					</Grid>
+					<ControlTemplate.Triggers>
+						<Trigger Property="IsKeyboardFocused" Value="true"/>
+						<Trigger Property="IsChecked" Value="true">
+							<Setter Property="Visibility" TargetName="形状_1_副本_3" Value="Visible"/>
+							<Setter Property="Visibility" TargetName="形状_1" Value="Hidden"/>
+						</Trigger>
+						<Trigger Property="IsEnabled" Value="false">
+							<Setter Property="Foreground" Value="#ADADAD"/>
+						</Trigger>
+					</ControlTemplate.Triggers>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+	<Style x:Key="ToggleButtonStyle_Expand" TargetType="{x:Type ToggleButton}">
+		<Setter Property="FocusVisualStyle" Value="{StaticResource ButtonFocusVisual}"/>
+		<Setter Property="Background" Value="{StaticResource ButtonNormalBackground}"/>
+		<Setter Property="BorderBrush" Value="{StaticResource ButtonNormalBorder}"/>
+		<Setter Property="BorderThickness" Value="1"/>
+		<Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+		<Setter Property="HorizontalContentAlignment" Value="Center"/>
+		<Setter Property="VerticalContentAlignment" Value="Center"/>
+		<Setter Property="Padding" Value="1"/>
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="{x:Type ToggleButton}">
+					<Grid Background="#00000000">
+						<Path x:Name="形状_8" Data="F1M12.157,11.933C12.157,11.933 11.126,12.964 11.126,12.964 11.099,12.99 11.065,13 11.037,13.023 11.037,13.023 4.342,19.718 4.342,19.718 3.863,20.197 3.085,20.197 2.606,19.718 2.606,19.718 1.575,18.687 1.575,18.687 1.095,18.207 1.095,17.43 1.575,16.95 1.575,16.95 7.475,11.05 7.475,11.05 7.475,11.05 1.575,5.15 1.575,5.15 1.095,4.67 1.095,3.893 1.575,3.413 1.575,3.413 2.606,2.382 2.606,2.382 3.085,1.903 3.863,1.903 4.342,2.382 4.342,2.382 11.037,9.077 11.037,9.077 11.065,9.1 11.099,9.109 11.126,9.136 11.126,9.136 12.157,10.167 12.157,10.167 12.4,10.41 12.517,10.731 12.513,11.05 12.517,11.369 12.4,11.689 12.157,11.933z" Fill="#FFFFFFFF" Height="20" Width="12" VerticalAlignment="Center" Stretch="Fill" HorizontalAlignment="Center" Opacity="0.6" RenderTransformOrigin="0.5,0.5">
+							<Path.RenderTransform>
+								<TransformGroup>
+									<ScaleTransform/>
+									<SkewTransform/>
+									<RotateTransform/>
+									<TranslateTransform/>
+								</TransformGroup>
+							</Path.RenderTransform>
+						</Path>
+					</Grid>
+					<ControlTemplate.Triggers>
+						<Trigger Property="IsMouseOver" Value="True">
+							<Setter Property="Opacity" TargetName="形状_8" Value="1"/>
+						</Trigger>
+						<Trigger Property="IsPressed" Value="True">
+							<Setter Property="RenderTransform" TargetName="形状_8">
+								<Setter.Value>
+									<TransformGroup>
+										<ScaleTransform/>
+										<SkewTransform/>
+										<RotateTransform/>
+										<TranslateTransform Y="1"/>
+									</TransformGroup>
+								</Setter.Value>
+							</Setter>
+						</Trigger>
+						<Trigger Property="IsKeyboardFocused" Value="true"/>
+						<Trigger Property="IsChecked" Value="true"/>
+						<Trigger Property="IsEnabled" Value="false">
+							<Setter Property="Foreground" Value="#ADADAD"/>
+						</Trigger>
+					</ControlTemplate.Triggers>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+	<Style x:Key="ButtonStyle_Normal" TargetType="{x:Type Button}">
+		<Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+		<Setter Property="Focusable" Value="False"/>
+		<Setter Property="Background" Value="{StaticResource ButtonNormalBackground}"/>
+		<Setter Property="BorderBrush" Value="{StaticResource ButtonNormalBorder}"/>
+		<Setter Property="BorderThickness" Value="1"/>
+		<Setter Property="Foreground" Value="White"/>
+		<Setter Property="HorizontalContentAlignment" Value="Center"/>
+		<Setter Property="VerticalContentAlignment" Value="Center"/>
+		<Setter Property="Padding" Value="1"/>
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="{x:Type Button}">
+					<Grid Background="#00000000">
+						<Border x:Name="border" BorderBrush="#FFA1A1A1" BorderThickness="2" Background="#00000000" CornerRadius="2"/>
+						<ContentPresenter x:Name="contentPresenter" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10,0" RenderTransformOrigin="0.5,0.5">
+							<ContentPresenter.RenderTransform>
+								<TransformGroup>
+									<ScaleTransform/>
+									<SkewTransform/>
+									<RotateTransform/>
+									<TranslateTransform/>
+								</TransformGroup>
+							</ContentPresenter.RenderTransform>
+						</ContentPresenter>
+					</Grid>
+					<ControlTemplate.Triggers>
+						<Trigger Property="IsMouseOver" Value="True">
+							<Setter Property="Background" TargetName="border" Value="#4CFFFFFF"/>
+							<Setter Property="BorderBrush" TargetName="border" Value="White"/>
+						</Trigger>
+						<Trigger Property="IsPressed" Value="True">
+							<Setter Property="RenderTransform" TargetName="contentPresenter">
+								<Setter.Value>
+									<TransformGroup>
+										<ScaleTransform/>
+										<SkewTransform/>
+										<RotateTransform/>
+										<TranslateTransform Y="1"/>
+									</TransformGroup>
+								</Setter.Value>
+							</Setter>
+						</Trigger>
+						<Trigger Property="IsKeyboardFocused" Value="true"/>
+						<Trigger Property="ToggleButton.IsChecked" Value="true"/>
+						<Trigger Property="IsEnabled" Value="false">
+							<Setter Property="Foreground" Value="#ADADAD"/>
+						</Trigger>
+					</ControlTemplate.Triggers>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+	<Style x:Key="ToggleButtonStyle_Adjust" TargetType="{x:Type ToggleButton}">
+		<Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+		<Setter Property="Focusable" Value="False"/>
+		<Setter Property="Background" Value="{StaticResource ButtonNormalBackground}"/>
+		<Setter Property="BorderBrush" Value="{StaticResource ButtonNormalBorder}"/>
+		<Setter Property="BorderThickness" Value="1"/>
+		<Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+		<Setter Property="HorizontalContentAlignment" Value="Center"/>
+		<Setter Property="VerticalContentAlignment" Value="Center"/>
+		<Setter Property="Padding" Value="1"/>
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="{x:Type ToggleButton}">
+					<Grid x:Name="gridContent" Background="Transparent">
+						<Path x:Name="path" Data="M10.389788,16.506544 L9.6458406,19.477308 10.585601,20.466591 13.596693,19.712435 z M18.454914,9.8217809 L12.367216,15.909989 14.185591,17.728409 20.273653,11.640199 z M19.470972,6.8390978 C19.84017,6.8433745 20.210869,6.9876907 20.493853,7.2714088 L22.823963,9.6015766 C23.390659,10.167557 23.401215,11.08441 22.847622,11.637652 22.847622,11.63838 22.846893,11.63838 22.846529,11.639107 L22.846893,11.639107 14.730812,19.757204 14.182679,20.314449 8.3170004,21.786001 9.7877874,15.914357 9.9592152,15.745108 18.454914,7.2484787 18.455643,7.2492063 C18.456005,7.2484787 18.456369,7.2477505 18.457098,7.2470224 18.734077,6.9705837 19.101772,6.834821 19.470972,6.8390978 z M0,0 L3.4453847,0 16.379227,0 17.40855,0 19.655001,2.2052567 19.655001,4.9932196 18.1991,4.9932196 18.1991,2.8163514 16.81345,1.455855 16.379227,1.455855 3.4453847,1.455855 1.455899,1.455855 1.455899,20.372144 6.7950449,20.372144 6.4299779,21.828001 0,21.828001 z" Fill="#99FFFFFF" Height="Auto" Stretch="Fill" Width="22"/>
+					</Grid>
+					<ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Fill" TargetName="path" Value="White"/>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter Property="RenderTransform" TargetName="gridContent">
+                                <Setter.Value>
+                                    <TransformGroup>
+                                        <ScaleTransform/>
+                                        <SkewTransform/>
+                                        <RotateTransform/>
+                                        <TranslateTransform Y="1"/>
+                                    </TransformGroup>
+                                </Setter.Value>
+                            </Setter>
+                        </Trigger>
+                        <Trigger Property="IsKeyboardFocused" Value="true"/>
+						<Trigger Property="IsChecked" Value="true">
+							<Setter Property="Fill" TargetName="path" Value="{DynamicResource Brush_Selected}"/>
+						</Trigger>
+						<Trigger Property="IsEnabled" Value="false">
+							<Setter Property="Opacity" Value="0.5"/>
+						</Trigger>
+					</ControlTemplate.Triggers>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+
+    <Style x:Key="ToggleButtonStyle_Rotate" TargetType="{x:Type ToggleButton}">
+        <Setter Property="FocusVisualStyle" Value="{StaticResource ButtonFocusVisual}"/>
+        <Setter Property="Background" Value="{StaticResource ButtonNormalBackground}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource ButtonNormalBorder}"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="Padding" Value="1"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ToggleButton}">
+                    <Grid x:Name="gridContent" Background="Transparent">
+                    	<Path x:Name="path"  Data="F1M5.026,9.787C5.026,9.787 5.026,14.019 5.026,14.019 5.026,14.019 4.449,14.212 4.449,14.212 4.449,14.212 5.655,25.548 15.563,22.981 16.646,22.713 20.003,21.834 20.899,17.579 20.899,17.579 25.708,21.811 25.708,21.811 25.708,21.811 21.572,28.737 13.203,27.102 4.833,25.466 3.487,14.597 3.487,14.597 3.487,14.597 1.659,14.597 1.659,14.597 1.659,14.597 5.026,9.787 5.026,9.787z M15.893,2.228C27.092,2.824 27.921,13.635 27.921,13.635 27.921,13.635 30.134,13.827 30.134,13.827 29.556,14.212 26.382,20.464 26.382,20.464 26.382,20.464 18.397,13.635 18.397,13.635 18.397,13.635 21.572,13.635 21.572,13.635 20.784,10.07 19.375,7.676 17.568,6.409 10.976,1.911 5.411,8.537 5.411,8.537 6.985,4.611 11.84,2.416 15.893,2.228z" Fill="#99FFFFFF" Stretch="Fill" Height="Auto" Width="24" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Fill" TargetName="path" Value="White"/>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter Property="RenderTransform" TargetName="gridContent">
+                                <Setter.Value>
+                                    <TransformGroup>
+                                        <ScaleTransform/>
+                                        <SkewTransform/>
+                                        <RotateTransform/>
+                                        <TranslateTransform Y="1"/>
+                                    </TransformGroup>
+                                </Setter.Value>
+                            </Setter>
+                        </Trigger>
+                        <Trigger Property="IsKeyboardFocused" Value="true"/>
+                        <Trigger Property="IsChecked" Value="true">
+                            <Setter Property="Fill" TargetName="path" Value="{DynamicResource Brush_Selected}"/>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="false">
+                            <Setter Property="Opacity" Value="0.5"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="ToggleButtonStyle_StreamInfo" TargetType="{x:Type ToggleButton}">
+        <Setter Property="FocusVisualStyle" Value="{StaticResource ButtonFocusVisual}"/>
+        <Setter Property="Background" Value="{StaticResource ButtonNormalBackground}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource ButtonNormalBorder}"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="Padding" Value="1"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ToggleButton}">
+                    <Grid x:Name="gridContent" Background="Transparent">
+                    	<Path x:Name="path" Data="F1M2.937,7.937C2.937,7.937 5,7.937 5,7.937 5.552,7.937 6,8.385 6,8.937 6,8.937 6,16 6,16 6,16.552 5.552,17 5,17 5,17 2.937,17 2.937,17 2.385,17 1.937,16.552 1.937,16 1.937,16 1.937,8.937 1.937,8.937 1.937,8.385 2.385,7.937 2.937,7.937z M3.937,1.5C5.215,1.5 6.25,2.535 6.25,3.812 6.25,5.09 5.215,6.125 3.937,6.125 2.66,6.125 1.625,5.09 1.625,3.812 1.625,2.535 2.66,1.5 3.937,1.5z" Fill="#99FFFFFF" Height="Auto" Width="8" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Fill" TargetName="path" Value="White"/>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter Property="RenderTransform" TargetName="gridContent">
+                                <Setter.Value>
+                                    <TransformGroup>
+                                        <ScaleTransform/>
+                                        <SkewTransform/>
+                                        <RotateTransform/>
+                                        <TranslateTransform Y="1"/>
+                                    </TransformGroup>
+                                </Setter.Value>
+                            </Setter>
+                        </Trigger>
+                        <Trigger Property="IsKeyboardFocused" Value="true"/>
+                        <Trigger Property="IsChecked" Value="true">
+                            <Setter Property="Fill" TargetName="path" Value="{DynamicResource Brush_Selected}"/>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="false">
+                            <Setter Property="Opacity" Value="0.5"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="ToggleButtonStyle_SwitchMode" TargetType="{x:Type ToggleButton}">
+        <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+		<Setter Property="Focusable" Value="False"/>
+        <Setter Property="Background" Value="{StaticResource ButtonNormalBackground}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource ButtonNormalBorder}"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="Padding" Value="1"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ToggleButton}">
+                    <Grid Width="32" Height="32">
+                        <Ellipse Fill="#4C898989" Stroke="#99FFFFFF" StrokeThickness="2"/>
+                        <Ellipse x:Name="Hover" Fill="#4CFFFFFF" Stroke="#99FFFFFF" Visibility="Hidden" StrokeThickness="2"/>
+                        <Canvas x:Name="icons_play" ClipToBounds="True" HorizontalAlignment="Center" Height="20" UseLayoutRounding="False" VerticalAlignment="Center" Width="20" RenderTransformOrigin="0.5,0.5">
+                            <Canvas.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform/>
+                                    <SkewTransform/>
+                                    <RotateTransform/>
+                                    <TranslateTransform/>
+                                </TransformGroup>
+                            </Canvas.RenderTransform>
+                            <Grid x:Name="complete_mode" Width="20" Height="20" HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="Collapsed">
+                            	<Border BorderBrush="White" BorderThickness="4,4,0,0" Width="14" Height="14" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,2,0,0"/>
+                            	<Rectangle Fill="#FFFFFFFF" Height="Auto" VerticalAlignment="Stretch" RenderTransformOrigin="0.5,0.5" Width="16" StrokeThickness="0" HorizontalAlignment="Stretch" Margin="2.25,8.75,1.75,7.25">
+                            		<Rectangle.RenderTransform>
+                            			<TransformGroup>
+                            				<ScaleTransform/>
+                            				<SkewTransform/>
+                            				<RotateTransform Angle="43.668"/>
+                            				<TranslateTransform/>
+                            			</TransformGroup>
+                            		</Rectangle.RenderTransform>
+                            	</Rectangle>
+                            	<Border BorderBrush="White" BorderThickness="0,1,0,0" Width="14" Height="18" CornerRadius="0" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Grid>
+                            <Grid x:Name="simple_mode" Width="20" Height="20" HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="Visible">
+                            	<Border BorderBrush="White" BorderThickness="0,0,4,4" Width="14" Height="14" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,2"/>
+                            	<Rectangle Fill="#FFFFFFFF" Height="4" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Width="16" StrokeThickness="0" HorizontalAlignment="Stretch" Margin="0.75,5.75,3.25,0">
+                            		<Rectangle.RenderTransform>
+                            			<TransformGroup>
+                            				<ScaleTransform/>
+                            				<SkewTransform/>
+                            				<RotateTransform Angle="43.668"/>
+                            				<TranslateTransform/>
+                            			</TransformGroup>
+                            		</Rectangle.RenderTransform>
+                            	</Rectangle>
+                            	<Border BorderBrush="White" BorderThickness="0,0,0,1" Width="14" Height="18" CornerRadius="0" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Grid>
+                        </Canvas>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                		<Trigger Property="IsChecked" Value="True">
+                			<Setter Property="Visibility" TargetName="complete_mode" Value="Visible"/>
+                			<Setter Property="Visibility" TargetName="simple_mode" Value="Hidden"/>
+                		</Trigger>
+                		<Trigger Property="IsPressed" Value="True">
+                			<Setter Property="RenderTransform" TargetName="icons_play">
+                				<Setter.Value>
+                					<TransformGroup>
+                						<ScaleTransform/>
+                						<SkewTransform/>
+                						<RotateTransform/>
+                						<TranslateTransform Y="1"/>
+                					</TransformGroup>
+                				</Setter.Value>
+                			</Setter>
+                		</Trigger>
+                		<Trigger Property="IsMouseOver" Value="True">
+                			<Setter Property="Visibility" TargetName="Hover" Value="Visible"/>
+                		</Trigger>
+                		<Trigger Property="IsKeyboardFocused" Value="true"/>
+                		<Trigger Property="IsChecked" Value="true"/>
+                		<Trigger Property="IsEnabled" Value="false">
+                			<Setter Property="Foreground" Value="#ADADAD"/>
+                		</Trigger>
+                	</ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="ToggleButtonStyle_Normal" TargetType="{x:Type ToggleButton}">
+        <Setter Property="FocusVisualStyle" Value="{StaticResource ButtonFocusVisual}"/>
+        <Setter Property="Background" Value="{StaticResource ButtonNormalBackground}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource ButtonNormalBorder}"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="Padding" Value="1"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ToggleButton}">
+                    <Grid Width="32" Height="32">
+                        <Ellipse Fill="#4C898989" Stroke="#99FFFFFF" StrokeThickness="2"/>
+                        <Ellipse x:Name="Hover" Fill="#4CFFFFFF" Stroke="#99FFFFFF" Visibility="Hidden" StrokeThickness="2"/>
+                        <Canvas x:Name="icons_play" ClipToBounds="True" HorizontalAlignment="Center" Height="20" UseLayoutRounding="False" VerticalAlignment="Center" Width="20" RenderTransformOrigin="0.5,0.5">
+                            <Canvas.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform/>
+                                    <SkewTransform/>
+                                    <RotateTransform/>
+                                    <TranslateTransform/>
+                                </TransformGroup>
+                            </Canvas.RenderTransform>
+                        <ContentPresenter />
+                        </Canvas>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsChecked" Value="True">
+                            <Setter Property="Visibility" TargetName="Hover" Value="Visible"/>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter Property="RenderTransform" TargetName="icons_play">
+                                <Setter.Value>
+                                    <TransformGroup>
+                                        <ScaleTransform/>
+                                        <SkewTransform/>
+                                        <RotateTransform/>
+                                        <TranslateTransform Y="1"/>
+                                    </TransformGroup>
+                                </Setter.Value>
+                            </Setter>
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Visibility" TargetName="Hover" Value="Visible"/>
+                        </Trigger>
+                        <Trigger Property="IsKeyboardFocused" Value="true"/>
+                        <Trigger Property="IsEnabled" Value="false">
+                            <Setter Property="Opacity" Value="0.3"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="ButtonStyle_Visible" TargetType="{x:Type Button}">
+    	<Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+    	<Setter Property="Focusable" Value="False"/>
+    	<Setter Property="Background" Value="{StaticResource ButtonNormalBackground}"/>
+    	<Setter Property="BorderBrush" Value="{StaticResource ButtonNormalBorder}"/>
+    	<Setter Property="BorderThickness" Value="1"/>
+    	<Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+    	<Setter Property="HorizontalContentAlignment" Value="Center"/>
+    	<Setter Property="VerticalContentAlignment" Value="Center"/>
+    	<Setter Property="Padding" Value="1"/>
+    	<Setter Property="Template">
+    		<Setter.Value>
+    			<ControlTemplate TargetType="{x:Type Button}">
+    				<Grid Background="#00000000">
+    					<ContentPresenter x:Name="contentPresenter" Opacity="0.6" RenderTransformOrigin="0.5,0.5">
+    						<ContentPresenter.RenderTransform>
+    							<TransformGroup>
+    								<ScaleTransform/>
+    								<SkewTransform/>
+    								<RotateTransform/>
+    								<TranslateTransform/>
+    							</TransformGroup>
+    						</ContentPresenter.RenderTransform>
+    					</ContentPresenter>
+    				</Grid>
+    				<ControlTemplate.Triggers>
+    					<Trigger Property="IsMouseOver" Value="True">
+    						<Setter Property="Opacity" TargetName="contentPresenter" Value="1"/>
+    					</Trigger>
+    					<Trigger Property="IsPressed" Value="True">
+    						<Setter Property="RenderTransform" TargetName="contentPresenter">
+    							<Setter.Value>
+    								<TransformGroup>
+    									<ScaleTransform/>
+    									<SkewTransform/>
+    									<RotateTransform/>
+    									<TranslateTransform Y="1"/>
+    								</TransformGroup>
+    							</Setter.Value>
+    						</Setter>
+    					</Trigger>
+    					<Trigger Property="IsKeyboardFocused" Value="true"/>
+    					<Trigger Property="ToggleButton.IsChecked" Value="true"/>
+    					<Trigger Property="IsEnabled" Value="false">
+    						<Setter Property="Opacity" Value="0.5"/>
+    					</Trigger>
+    				</ControlTemplate.Triggers>
+    			</ControlTemplate>
+    		</Setter.Value>
+    	</Setter>
+    </Style>
+
+</ResourceDictionary>

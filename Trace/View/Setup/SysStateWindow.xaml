@@ -1,0 +1,32 @@
+﻿<Window x:Class="Trace.SysStateWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="系统状态" Height="300" Width="400" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Loaded="SysStateWindow_Loaded">
+    <Grid>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="95*"/>
+                <RowDefinition Height="145*"/>
+                <RowDefinition Height="40*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <StackPanel Orientation="Vertical" Grid.Column="0" Grid.Row="0">
+                <CheckBox Name="spectrographCheckBox" Content="光谱仪通信" HorizontalAlignment="Left" Margin="20,15,0,0" VerticalAlignment="Center" IsEnabled="False"/>
+                <CheckBox Name="controllerConnectionCheckBox" Content="控制器通信" HorizontalAlignment="Left" Margin="20,10,0,0" VerticalAlignment="Center" IsEnabled="False"/>
+                <CheckBox Name="controllerStateCheckBox" Content="控制器状态" HorizontalAlignment="Left" Margin="20,10,0,0" VerticalAlignment="Center" IsEnabled="False"/>
+            </StackPanel>
+
+            <GroupBox Header="诊断结果:" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" Width="350" Margin="5">
+                <TextBlock Name="stateTextBox" HorizontalAlignment="Center" Width="300"/>
+            </GroupBox>
+            
+            <Button x:Name="BtnCheck" Content="诊断系统" HorizontalAlignment="Center" Height="auto" VerticalAlignment="Stretch" Width="100" Click="RecheckBtn_Click" Grid.Row="2" Grid.Column="1" Margin="3"/>
+            <Button x:Name="BtnCreateTask" Content="新建任务" IsEnabled="False" HorizontalAlignment="Center" VerticalAlignment="Stretch" Width="100" Click="BtnCreateTask_Click" Grid.Row="2" Grid.Column="0" Margin="3"/>
+        </Grid>
+
+    </Grid>
+</Window>

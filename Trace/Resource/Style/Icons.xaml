@@ -1,0 +1,351 @@
+﻿<ResourceDictionary
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:ed="http://schemas.microsoft.com/expression/2010/drawing" mc:Ignorable="d">
+	<DataTemplate x:Key="DataTemplate_FF">
+		<Grid>
+			<Canvas x:Name="icons_play" ClipToBounds="True" HorizontalAlignment="Center" Height="20" UseLayoutRounding="False" VerticalAlignment="Center" Width="20">
+				<Path x:Name="形状_1_副本" Data="F1M1.962,1.149C1.962,1.149,7.21,5.015,9.834,6.948L10.024,7.088 10.024,5.498C10.024,3.082 10.024,1.149 10.024,1.149 10.024,1.149 19.354,8.022 19.354,8.022 19.354,8.022 10.024,14.895 10.024,14.895 10.024,14.895 10.024,12.962 10.024,10.546L10.024,8.956 9.834,9.096C7.21,11.029 1.962,14.895 1.962,14.895 1.962,14.895 1.962,1.149 1.962,1.149z" Fill="#FFFFFFFF" Height="16" Canvas.Left="0" Canvas.Top="2" Width="21"/>
+			</Canvas>
+		</Grid>
+	</DataTemplate>
+	<DataTemplate x:Key="DataTemplate_StepFF">
+		<Grid>
+			<Canvas x:Name="icons_play" ClipToBounds="True" HorizontalAlignment="Center" Height="20" UseLayoutRounding="False" VerticalAlignment="Center" Width="20">
+				<Path x:Name="形状_1_副本" Data="M4.0600931E-08,0 C-1.3533644E-08,0 5.2480001,3.8659999 7.8720002,5.7989998 L7.9380002,5.8476315 7.9380002,7.8983684 7.8720002,7.947 C5.2480001,9.8800001 -1.3533644E-08,13.746 4.0600931E-08,13.746 -1.3533644E-08,13.746 -1.3533644E-08,0 4.0600931E-08,0 z" Fill="#FFFFFFFF" Height="13.746" Canvas.Left="5" Stretch="Fill" Canvas.Top="3" Width="7.938" VerticalAlignment="Stretch"/>
+				<Rectangle Fill="#FFFFFFFF" Height="13.5" Canvas.Left="12.75" Canvas.Top="3" Width="2" StrokeThickness="0"/>
+			</Canvas>
+		</Grid>
+	</DataTemplate>
+	<DataTemplate x:Key="DataTemplate_RightArrow">
+		<Grid Width="10" Height="10">
+			<Canvas x:Name="icons_play" ClipToBounds="True" HorizontalAlignment="Stretch" Height="Auto" UseLayoutRounding="False" VerticalAlignment="Stretch" Width="Auto">
+				<Path Data="M5.0000001,0 L10,10 L-2.0915641E-08,10 z" Fill="#FFFFFFFF" HorizontalAlignment="Left" Height="10" Canvas.Left="0" RenderTransformOrigin="0.500000001045782,0.5" Stretch="Fill" Canvas.Top="0" VerticalAlignment="Top" Width="10">
+					<Path.RenderTransform>
+						<TransformGroup>
+							<ScaleTransform/>
+							<SkewTransform/>
+							<RotateTransform Angle="90"/>
+							<TranslateTransform/>
+						</TransformGroup>
+					</Path.RenderTransform>
+				</Path>
+			</Canvas>
+		</Grid>
+	</DataTemplate>
+	<DataTemplate x:Key="DataTemplate_UpArrow">
+		<Grid Width="10" Height="10">
+            <Path Data="M5.0000001,0 L10,10 L-2.0915641E-08,10 z" Fill="#FF207484" Height="Auto" Margin="0,0,0,2" Stretch="Fill" Width="Auto"/>
+		</Grid>
+	</DataTemplate>
+	<DataTemplate x:Key="DataTemplate_DownArrow">
+		<Grid Width="10" Height="10">
+            <Path Data="M5.0000001,0 L10,10 L-2.0915641E-08,10 z" Fill="#FF207484" Height="Auto" Margin="0,2,0,0" RenderTransformOrigin="0.500000001045782,0.5" Stretch="Fill" Width="Auto">
+				<Path.RenderTransform>
+					<TransformGroup>
+						<ScaleTransform/>
+						<SkewTransform/>
+						<RotateTransform Angle="180"/>
+						<TranslateTransform/>
+					</TransformGroup>
+				</Path.RenderTransform>
+			</Path>
+		</Grid>
+	</DataTemplate>
+	<DataTemplate x:Key="DataTemplate_LeftArrow">
+		<Grid Width="10" Height="10">
+			<Canvas x:Name="icons_play" ClipToBounds="True" HorizontalAlignment="Stretch" Height="Auto" UseLayoutRounding="False" VerticalAlignment="Stretch" Width="Auto">
+				<Path Data="M5.0000001,0 L10,10 L-2.0915641E-08,10 z" Fill="#FFFFFFFF" HorizontalAlignment="Left" Height="10" Canvas.Left="0" RenderTransformOrigin="0.500000001045782,0.5" Stretch="Fill" Canvas.Top="0" VerticalAlignment="Top" Width="10">
+					<Path.RenderTransform>
+						<TransformGroup>
+							<ScaleTransform/>
+							<SkewTransform/>
+							<RotateTransform Angle="-90"/>
+							<TranslateTransform/>
+						</TransformGroup>
+					</Path.RenderTransform>
+				</Path>
+			</Canvas>
+		</Grid>
+	</DataTemplate>
+	<!-- Resource dictionary entries should be defined here. -->
+	<DataTemplate x:Key="DataTemplate_FB">
+		<Grid Width="20" Height="20" HorizontalAlignment="Center" VerticalAlignment="Center">
+			<Canvas x:Name="icons_play" ClipToBounds="True" HorizontalAlignment="Stretch" Height="Auto" UseLayoutRounding="False" VerticalAlignment="Stretch" Width="Auto">
+				<Path x:Name="形状_1_副本_2" Data="F1M10.976,1.149C10.976,1.149,10.976,3.082,10.976,5.498L10.976,7.088 11.166,6.948C13.79,5.015 19.038,1.149 19.038,1.149 19.038,1.149 19.038,14.895 19.038,14.895 19.038,14.895 13.79,11.029 11.166,9.096L10.976,8.956 10.976,10.546C10.976,12.962 10.976,14.895 10.976,14.895 10.976,14.895 1.646,8.022 1.646,8.022 1.646,8.022 10.976,1.149 10.976,1.149z" Fill="#FFFFFFFF" Height="16" Canvas.Left="-1" Canvas.Top="2" Width="21"/>
+			</Canvas>
+		</Grid>
+	</DataTemplate>
+	<DataTemplate x:Key="DataTemplate_StepFB">
+		<Grid Width="20" Height="20" HorizontalAlignment="Center" VerticalAlignment="Center">
+			<Canvas x:Name="icons_play" ClipToBounds="True" HorizontalAlignment="Stretch" Height="Auto" UseLayoutRounding="False" VerticalAlignment="Stretch" Width="Auto">
+				<Path x:Name="形状_1_副本_2" Data="M11.121,0.14899995 C11.121,0.149 11.121,13.895 11.121,13.895 11.121,13.895 5.8729999,10.029 3.2490001,8.096 L3.059,7.9560002 C3.059,7.9560002 3.059,6.0880001 3.059,6.0880001 L3.2490001,5.9479998 C5.8729999,4.0149999 11.121,0.149 11.121,0.14899995 z M0.75000002,0 L3,0 3,13.5 0.91666669,13.5 z" Fill="#FFFFFFFF" Height="13.895" Canvas.Left="5.75" Stretch="Fill" Canvas.Top="3" Width="10.371"/>
+			</Canvas>
+		</Grid>
+	</DataTemplate>
+	<DataTemplate x:Key="DataTemplate_Rotate">
+		<Grid>
+			<Canvas x:Name="icons_play" ClipToBounds="True" HorizontalAlignment="Center" Height="20" UseLayoutRounding="False" VerticalAlignment="Center" Width="20">
+				<Path Data="F1M5.026,9.787C5.026,9.787 5.026,14.019 5.026,14.019 5.026,14.019 4.449,14.212 4.449,14.212 4.449,14.212 5.655,25.548 15.563,22.981 16.646,22.713 20.003,21.834 20.899,17.579 20.899,17.579 25.708,21.811 25.708,21.811 25.708,21.811 21.572,28.737 13.203,27.102 4.833,25.466 3.487,14.597 3.487,14.597 3.487,14.597 1.659,14.597 1.659,14.597 1.659,14.597 5.026,9.787 5.026,9.787z M15.893,2.228C27.092,2.824 27.921,13.635 27.921,13.635 27.921,13.635 30.134,13.827 30.134,13.827 29.556,14.212 26.382,20.464 26.382,20.464 26.382,20.464 18.397,13.635 18.397,13.635 18.397,13.635 21.572,13.635 21.572,13.635 20.784,10.07 19.375,7.676 17.568,6.409 10.976,1.911 5.411,8.537 5.411,8.537 6.985,4.611 11.84,2.416 15.893,2.228z" Fill="White" Canvas.Left="0" Canvas.Top="0" Stretch="Fill" Height="17" Width="20"/>
+			</Canvas>
+		</Grid>
+	</DataTemplate>
+	<DataTemplate x:Key="DataTemplate_Stop">
+		<Grid Width="20" Height="20" HorizontalAlignment="Center" VerticalAlignment="Center">
+					<Path x:Name="形状_4" Data="F1M2.969,1.969C2.969,1.969 11,1.969 11,1.969 11.552,1.969 12,2.416 12,2.969 12,2.969 12,11 12,11 12,11.552 11.552,12 11,12 11,12 2.969,12 2.969,12 2.416,12 1.969,11.552 1.969,11 1.969,11 1.969,2.969 1.969,2.969 1.969,2.416 2.416,1.969 2.969,1.969z" Fill="#FFFFFFFF" Height="15" Width="15" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+		</Grid>
+	</DataTemplate>
+	<DataTemplate x:Key="DataTemplate_Seek">
+		<Grid Width="20" Height="20" HorizontalAlignment="Center" VerticalAlignment="Center">
+			<Ellipse Fill="{x:Null}" Margin="1.245,1.07,4.754,4.929" Stroke="White" StrokeThickness="3" Panel.ZIndex="-2" Width="14" Height="14"/>
+			<Rectangle Fill="White" HorizontalAlignment="Right" Height="3" Margin="0,0,0.351,2.825" Stroke="{x:Null}" StrokeThickness="2" VerticalAlignment="Bottom" Width="8" RenderTransformOrigin="0.5,0.5">
+				<Rectangle.RenderTransform>
+					<TransformGroup>
+						<ScaleTransform/>
+						<SkewTransform/>
+						<RotateTransform Angle="45"/>
+						<TranslateTransform/>
+					</TransformGroup>
+				</Rectangle.RenderTransform>
+			</Rectangle>
+		</Grid>
+	</DataTemplate>
+	<DataTemplate x:Key="DataTemplate_Open">
+		<Grid>
+			<Canvas x:Name="icons_play" ClipToBounds="True" HorizontalAlignment="Center" Height="20" UseLayoutRounding="False" VerticalAlignment="Center" Width="20">
+				<Path x:Name="形状_5_副本"  Data="F1M2.994,3.882C2.994,3.882 5.675,3.882 9.185,3.882 10.394,3.882 10.67,6.051 11.069,6.051 14.809,6.051 17.308,6.051 17.308,6.051 17.836,6.051 18.419,6.55 18.609,7.167 18.609,7.167 20.908,14.918 20.908,14.918 21.098,15.534 20.823,16.034 20.295,16.034 20.295,16.034 6.425,16.034 6.425,16.034 5.896,16.034 5.313,15.534 5.123,14.918 5.123,14.918 2.136,4.998 2.136,4.998 1.946,4.381 2.465,3.882 2.994,3.882z M15.264,1.966C19.355,1.966 20.913,1.966 20.913,1.966 21.529,1.966 22.029,2.466 22.029,3.082 22.029,3.082 22.029,14.816 22.029,14.816 22.029,14.816 19.585,6.086 19.585,6.086 19.395,5.469 18.813,4.97 18.284,4.97 18.284,4.97 15.855,4.97 12.115,4.97 12.062,4.97 11.995,4.926 11.921,4.857 13.192,4.378 13.504,1.966 15.264,1.966z" Fill="#FFFFFFFF" Height="18" Canvas.Left="-2" Canvas.Top="1" Width="24"/>
+			</Canvas>
+		</Grid>
+	</DataTemplate>
+	<DataTemplate x:Key="DataTemplate_Info">
+		<Grid>
+			<Canvas x:Name="icons_play" ClipToBounds="True" HorizontalAlignment="Center" Height="20" UseLayoutRounding="False" VerticalAlignment="Center" Width="20">
+				<Path x:Name="形状_7_副本" Data="F1M2.937,7.937C2.937,7.937 5,7.937 5,7.937 5.552,7.937 6,8.385 6,8.937 6,8.937 6,16 6,16 6,16.552 5.552,17 5,17 5,17 2.937,17 2.937,17 2.385,17 1.937,16.552 1.937,16 1.937,16 1.937,8.937 1.937,8.937 1.937,8.385 2.385,7.937 2.937,7.937z M3.937,1.5C5.215,1.5 6.25,2.535 6.25,3.812 6.25,5.09 5.215,6.125 3.937,6.125 2.66,6.125 1.625,5.09 1.625,3.812 1.625,2.535 2.66,1.5 3.937,1.5z" Fill="#FFFFFFFF" Height="18" Canvas.Left="6" Canvas.Top="1" Width="8"/>
+			</Canvas>
+		</Grid>
+	</DataTemplate>
+	<DataTemplate x:Key="DataTemplate_Min">
+		<Grid>
+			<Canvas x:Name="icons_play" ClipToBounds="True" HorizontalAlignment="Stretch" Height="Auto" UseLayoutRounding="False" VerticalAlignment="Stretch" Width="Auto">
+				<Path x:Name="形状_7" Data="F1M2.937,1.937C2.937,1.937 13,1.937 13,1.937 13.552,1.937 14,2.385 14,2.937 14,2.937 14,5 14,5 14,5.552 13.552,6 13,6 13,6 2.937,6 2.937,6 2.385,6 1.937,5.552 1.937,5 1.937,5 1.937,2.937 1.937,2.937 1.937,2.385 2.385,1.937 2.937,1.937z" Fill="#FFFFFFFF" Height="7" Canvas.Left="2" Canvas.Top="10" Width="15"/>
+			</Canvas>
+		</Grid>
+	</DataTemplate>
+	<DataTemplate x:Key="DataTemplate_Close">
+		<Grid>
+			<Canvas x:Name="icons_play" ClipToBounds="True" HorizontalAlignment="Stretch" Height="Auto" UseLayoutRounding="False" VerticalAlignment="Stretch" Width="Auto">
+				<Path x:Name="形状_6" Data="F1M11.242,8.172C11.242,8.172 14.572,11.502 14.572,11.502 14.963,11.893 14.963,12.526 14.572,12.916 14.572,12.916 12.76,14.728 12.76,14.728 12.37,15.119 11.736,15.119 11.346,14.728 11.346,14.728 8.016,11.398 8.016,11.398 8.016,11.398 4.717,14.697 4.717,14.697 4.326,15.088 3.693,15.088 3.302,14.697 3.302,14.697 1.491,12.885 1.491,12.885 1.1,12.495 1.1,11.861 1.491,11.471 1.491,11.471 4.789,8.172 4.789,8.172 4.789,8.172 1.491,4.873 1.491,4.873 1.1,4.482 1.1,3.849 1.491,3.459 1.491,3.459 3.302,1.647 3.302,1.647 3.693,1.256 4.326,1.256 4.717,1.647 4.717,1.647 8.016,4.946 8.016,4.946 8.016,4.946 11.346,1.616 11.346,1.616 11.736,1.225 12.37,1.225 12.76,1.616 12.76,1.616 14.572,3.427 14.572,3.427 14.963,3.818 14.963,4.451 14.572,4.842 14.572,4.842 11.242,8.172 11.242,8.172z" Fill="#FFFFFFFF" Height="17" Canvas.Left="2" Canvas.Top="2" Width="16"/>
+			</Canvas>
+		</Grid>
+	</DataTemplate>
+	<DataTemplate x:Key="DataTemplate_Folder">
+		<Grid>
+			<Canvas x:Name="icons_play" ClipToBounds="True" HorizontalAlignment="Stretch" Height="20" UseLayoutRounding="False" VerticalAlignment="Stretch" Width="20">
+				<Path x:Name="形状_9" Data="F1M19,15.083C19,15.083 2.969,15.083 2.969,15.083 2.416,15.083 1.969,14.636 1.969,14.083 1.969,14.083 1.969,8.5 1.969,8.5 1.969,8.5 1.969,5.937 1.969,5.937 1.969,5.937 1.969,2.969 1.969,2.969 1.969,2.416 2.416,1.969 2.969,1.969 2.969,1.969 10.031,1.969 10.031,1.969 10.584,1.969 11.5,1.885 12.094,2.969 12.094,2.969 12.812,4.937 13,4.937 14.094,4.937 19,4.937 19,4.937 19.552,4.937 20,5.385 20,5.937 20,5.937 20,14.083 20,14.083 20,14.636 19.552,15.083 19,15.083z" Fill="#FFFFFFFF" Height="17" Canvas.Left="-1" Canvas.Top="2" Width="21"/>
+			</Canvas>
+		</Grid>
+	</DataTemplate>
+	<DataTemplate x:Key="DataTemplate_Files">
+		<Grid>
+			<Canvas x:Name="icons_play" ClipToBounds="True" HorizontalAlignment="Stretch" Height="20" UseLayoutRounding="False" VerticalAlignment="Stretch" Width="20">
+				<Path x:Name="形状_11" Data="F1M4.031,14.031C4.031,14.031 4.031,15 4.031,15 4.031,15 11.969,15 11.969,15 11.969,15 11.969,14.031 11.969,14.031 11.969,14.031 4.031,14.031 4.031,14.031z M4.031,11.031C4.031,11.031 4.031,12 4.031,12 4.031,12 11.969,12 11.969,12 11.969,12 11.969,11.031 11.969,11.031 11.969,11.031 4.031,11.031 4.031,11.031z M4.031,8.031C4.031,8.031 4.031,9 4.031,9 4.031,9 11.969,9 11.969,9 11.969,9 11.969,8.031 11.969,8.031 11.969,8.031 4.031,8.031 4.031,8.031z M10.342,1.844C10.342,1.844 10.342,5.273 10.342,5.273 10.342,5.273 13.75,5.273 13.75,5.273 13.75,5.273 10.342,1.844 10.342,1.844z M2,1C2,1 10.681,1 10.681,1 10.681,1 15,5.319 15,5.319 15,5.319 15,16 15,16 15,16.552 14.552,17 14,17 14,17 2,17 2,17 1.448,17 1,16.552 1,16 1,16 1,2 1,2 1,1.448 1.448,1 2,1z" Fill="#FFFFFFFF" Height="18" Canvas.Left="2" Canvas.Top="1" Width="17"/>
+			</Canvas>
+		</Grid>
+	</DataTemplate>
+	<DataTemplate x:Key="DataTemplate_Add">
+		<Grid>
+			<Canvas x:Name="icons_play" ClipToBounds="True" HorizontalAlignment="Stretch" Height="20" UseLayoutRounding="False" VerticalAlignment="Stretch" Width="20">
+				<Path x:Name="形状_12" Data="F1M13,10C13,10 9.984,10 9.984,10 9.984,10 9.984,13.016 9.984,13.016 9.984,13.568 9.537,14.016 8.984,14.016 8.984,14.016 6.953,14.016 6.953,14.016 6.401,14.016 5.953,13.568 5.953,13.016 5.953,13.016 5.953,10 5.953,10 5.953,10 2.937,10 2.937,10 2.385,10 1.937,9.552 1.937,9 1.937,9 1.937,6.969 1.937,6.969 1.937,6.416 2.385,5.969 2.937,5.969 2.937,5.969 5.953,5.969 5.953,5.969 5.953,5.969 5.953,2.953 5.953,2.953 5.953,2.401 6.401,1.953 6.953,1.953 6.953,1.953 8.984,1.953 8.984,1.953 9.537,1.953 9.984,2.401 9.984,2.953 9.984,2.953 9.984,5.969 9.984,5.969 9.984,5.969 13,5.969 13,5.969 13.552,5.969 14,6.416 14,6.969 14,6.969 14,9 14,9 14,9.552 13.552,10 13,10z" Fill="#FFFFFFFF" Height="16" Canvas.Left="2" Canvas.Top="2" Width="15"/>
+				<Path x:Name="形状_12_副本" Data="F1M2.937,1.969C2.937,1.969 3.094,1.969 3.369,1.969 3.645,1.969 4.038,1.969 4.509,1.969 4.981,1.969 5.531,1.969 6.121,1.969 6.711,1.969 7.34,1.969 7.969,1.969 8.597,1.969 9.226,1.969 9.816,1.969 10.406,1.969 10.956,1.969 11.428,1.969 11.899,1.969 12.292,1.969 12.568,1.969 12.843,1.969 13,1.969 13,1.969 13.276,1.969 13.526,2.081 13.707,2.262 13.888,2.442 14,2.693 14,2.969 14,2.969 14,3.096 14,3.286 14,3.477 14,3.731 14,3.984 14,4.238 14,4.492 14,4.683 14,4.873 14,5 14,5 14,5.276 13.888,5.526 13.707,5.707 13.526,5.888 13.276,6 13,6 13,6 12.843,6 12.568,6 12.292,6 11.899,6 11.428,6 10.956,6 10.406,6 9.816,6 9.226,6 8.597,6 7.969,6 7.34,6 6.711,6 6.121,6 5.531,6 4.981,6 4.509,6 4.038,6 3.645,6 3.369,6 3.094,6 2.937,6 2.937,6 2.661,6 2.411,5.888 2.23,5.707 2.049,5.526 1.937,5.276 1.937,5 1.937,5 1.937,4.873 1.937,4.683 1.937,4.492 1.937,4.238 1.937,3.984 1.937,3.731 1.937,3.477 1.937,3.286 1.937,3.096 1.937,2.969 1.937,2.969 1.937,2.693 2.049,2.442 2.23,2.262 2.411,2.081 2.661,1.969 2.937,1.969z" Fill="#FFFFFFFF" Height="7" Canvas.Left="2" Canvas.Top="6" Width="15"/>
+            </Canvas>
+        </Grid>
+    </DataTemplate>
+    <DataTemplate x:Key="DataTemplate_Minus">
+        <Grid>
+            <Canvas x:Name="icons_play" ClipToBounds="True" HorizontalAlignment="Stretch" Height="20" UseLayoutRounding="False" VerticalAlignment="Stretch" Width="20">
+                <Path x:Name="形状_12_副本" Data="F1M2.937,1.969C2.937,1.969 3.094,1.969 3.369,1.969 3.645,1.969 4.038,1.969 4.509,1.969 4.981,1.969 5.531,1.969 6.121,1.969 6.711,1.969 7.34,1.969 7.969,1.969 8.597,1.969 9.226,1.969 9.816,1.969 10.406,1.969 10.956,1.969 11.428,1.969 11.899,1.969 12.292,1.969 12.568,1.969 12.843,1.969 13,1.969 13,1.969 13.276,1.969 13.526,2.081 13.707,2.262 13.888,2.442 14,2.693 14,2.969 14,2.969 14,3.096 14,3.286 14,3.477 14,3.731 14,3.984 14,4.238 14,4.492 14,4.683 14,4.873 14,5 14,5 14,5.276 13.888,5.526 13.707,5.707 13.526,5.888 13.276,6 13,6 13,6 12.843,6 12.568,6 12.292,6 11.899,6 11.428,6 10.956,6 10.406,6 9.816,6 9.226,6 8.597,6 7.969,6 7.34,6 6.711,6 6.121,6 5.531,6 4.981,6 4.509,6 4.038,6 3.645,6 3.369,6 3.094,6 2.937,6 2.937,6 2.661,6 2.411,5.888 2.23,5.707 2.049,5.526 1.937,5.276 1.937,5 1.937,5 1.937,4.873 1.937,4.683 1.937,4.492 1.937,4.238 1.937,3.984 1.937,3.731 1.937,3.477 1.937,3.286 1.937,3.096 1.937,2.969 1.937,2.969 1.937,2.693 2.049,2.442 2.23,2.262 2.411,2.081 2.661,1.969 2.937,1.969z" Fill="#FFFFFFFF" Height="7" Canvas.Left="2" Canvas.Top="6" Width="15"/>
+            </Canvas>
+        </Grid>
+    </DataTemplate>
+
+    <DataTemplate x:Key="DataTemplate_Edit">
+        <Grid>
+            <Canvas x:Name="icons_play" ClipToBounds="True" HorizontalAlignment="Stretch" Height="20" UseLayoutRounding="False" VerticalAlignment="Stretch" Width="20">
+                <Path x:Name="形状_1" Data="F1M16.101,5.044C16.101,5.044 19.057,8 19.057,8 19.057,8 9.473,17.63 9.473,17.63 9.473,17.63 8.253,17.329 7.535,16.592 6.82,15.859 6.606,14.689 6.606,14.689 6.606,14.689 16.101,5.044 16.101,5.044z M18.985,3.034C19.452,3.05 19.919,3.282 20.352,3.715 21.552,4.914 20.94,6.242 20.574,6.608 20.574,6.608 19.612,7.57 19.612,7.57 19.612,7.57 16.656,4.614 16.656,4.614 16.656,4.614 17.618,3.652 17.618,3.652 18.051,3.219 18.518,3.018 18.985,3.034z M7.531,3C7.531,3 3.281,7.25 3.281,7.25 3.281,7.25 7.531,7.25 7.531,7.25 7.531,7.25 7.531,3 7.531,3z M6.687,1.937C6.687,1.937 18,2 18,2 18,2 18,2.01 18,2.01 18,2.01 5.919,14.314 5.919,14.314 5.919,14.314 4.477,19.408 4.477,19.408 4.477,19.408 9.973,18.255 9.973,18.255 9.973,18.255 18,10.081 18,10.081 18,10.081 18,21.937 18,21.937 18,21.937 1.937,21.937 1.937,21.937 1.937,21.937 1.937,7 1.937,7 1.937,7 6.687,1.937 6.687,1.937z" Fill="#FFFDFDFD" Height="22"  Width="22" />
+            </Canvas>
+
+        </Grid>
+    </DataTemplate>
+
+    <DataTemplate x:Key="DataTemplate_Cut">
+        <Grid>
+            <Canvas x:Name="icons_play" ClipToBounds="True" HorizontalAlignment="Stretch" Height="20" UseLayoutRounding="False" VerticalAlignment="Stretch" Width="20">
+                <Path   Data="F1M6.755,13.707C6.015,13.605 5.054,14.111 4.321,15.072 3.343,16.354 3.14,17.961 3.866,18.661 4.592,19.362 5.973,18.89 6.951,17.608 7.929,16.325 8.132,14.718 7.406,14.018 7.225,13.843 7.002,13.741 6.755,13.707z M15.495,13.707C15.248,13.741 15.025,13.843 14.844,14.018 14.118,14.718 14.321,16.325 15.299,17.608 16.277,18.89 17.658,19.362 18.384,18.661 19.11,17.961 18.907,16.354 17.929,15.072 17.195,14.111 16.235,13.605 15.495,13.707z M5.623,1.016C5.623,1.016 9.134,7.914 11.125,10.97 13.116,7.914 16.627,1.016 16.627,1.016 16.627,1.016 17.804,4.513 17.804,4.513 17.804,4.513 12.158,12.543 12.158,12.543 12.421,12.937 12.655,13.282 12.845,13.551 12.958,13.038 13.173,12.592 13.513,12.264 14.787,11.036 17.211,11.864 18.926,14.113 20.641,16.363 20.999,19.182 19.724,20.411 18.45,21.64 16.027,20.812 14.312,18.562 14.118,18.308 13.946,18.044 13.788,17.778 13.788,17.778 12.523,15.898 12.523,15.898 12.523,15.898 11.125,13.969 11.125,13.969 11.125,13.969 9.727,15.898 9.727,15.898 9.727,15.898 8.462,17.778 8.462,17.778 8.304,18.044 8.132,18.308 7.938,18.562 6.223,20.812 3.8,21.64 2.526,20.411 1.251,19.182 1.609,16.363 3.324,14.113 5.039,11.864 7.463,11.036 8.737,12.264 9.077,12.592 9.292,13.038 9.405,13.551 9.595,13.282 9.829,12.937 10.092,12.543 10.092,12.543 4.633,4.95 4.633,4.95 4.633,4.95 5.623,1.016 5.623,1.016z"   Height="20" Width="20" HorizontalAlignment="Center" VerticalAlignment="Center" Stretch="Fill" Fill="White" />
+            </Canvas>
+        </Grid>
+    </DataTemplate>
+    <DataTemplate x:Key="DataTemplate_Analyze">
+    	<Grid>
+    		<Canvas x:Name="icons_play" ClipToBounds="True" HorizontalAlignment="Stretch" Height="20" UseLayoutRounding="False" VerticalAlignment="Stretch" Width="20">
+    			<Path Data="M12.5,0 L17,0 17,11.25 18.25,11.25 18.25,12.25 17,12.25 12.5,12.25 11.25,12.25 7.5,12.25 6,12.25 1.5,12.25 0,12.25 0,11.25 1.5,11.25 1.5,3 6,3 6,11.25 7.5,11.25 7.5,5.25 11.25,5.25 11.25,11.25 12.5,11.25 z" Fill="White" Height="16.75" Canvas.Left="-0.083" Stretch="Fill" StrokeThickness="5" Canvas.Top="1.417" Width="19.583"/>
+    		</Canvas>
+    	</Grid>
+    </DataTemplate>
+    <DataTemplate x:Key="DataTemplate_ShowDetailTimeline">
+    	<Grid>
+    		<Grid x:Name="icons_play" ClipToBounds="True" HorizontalAlignment="Stretch" Height="20" UseLayoutRounding="False" VerticalAlignment="Stretch" Width="20">
+    			<Rectangle Fill="White" Height="3" StrokeThickness="5" Width="18" Margin="0,2,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+    			<Rectangle Fill="White" Height="3" StrokeThickness="5" Width="16" Margin="0,8.5,0,8" HorizontalAlignment="Center"/>
+    			<Rectangle Fill="White" Height="3" StrokeThickness="5" Width="18" HorizontalAlignment="Right" Margin="0,15,0,0" VerticalAlignment="Top"/>
+    		</Grid>
+    	</Grid>
+    </DataTemplate>
+
+    <DataTemplate x:Key="DataTemplate_Setting">
+        <Grid>
+            <Canvas x:Name="icons_play" ClipToBounds="True" HorizontalAlignment="Stretch" Height="20" UseLayoutRounding="False" VerticalAlignment="Stretch" Width="20">
+                <Path  Fill="White" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="20" Height="20" Data="F1M7.952,5.408C6.638,5.408 5.572,6.474 5.572,7.789 5.572,9.103 6.638,10.169 7.952,10.169 9.267,10.169 10.333,9.103 10.333,7.789 10.333,6.474 9.267,5.408 7.952,5.408z M6.969,1.035C6.969,1.035 8.933,1.035 8.933,1.035 8.933,1.035 9.48,2.602 9.48,2.602 9.849,2.711 10.197,2.865 10.528,3.045 10.528,3.045 12.034,2.319 12.034,2.319 12.034,2.319 13.423,3.708 13.423,3.708 13.423,3.708 12.7,5.206 12.7,5.206 12.884,5.54 13.041,5.891 13.151,6.264 13.151,6.264 14.707,6.808 14.707,6.808 14.707,6.808 14.707,8.773 14.707,8.773 14.707,8.773 13.15,9.316 13.15,9.316 13.04,9.689 12.883,10.04 12.7,10.374 12.7,10.374 13.421,11.87 13.421,11.87 13.421,11.87 12.032,13.259 12.032,13.259 12.032,13.259 10.527,12.533 10.527,12.533 10.197,12.712 9.85,12.866 9.483,12.975 9.483,12.975 8.934,14.543 8.934,14.543 8.934,14.543 6.97,14.543 6.97,14.543 6.97,14.543 6.422,12.974 6.422,12.974 6.056,12.865 5.711,12.712 5.381,12.533 5.381,12.533 3.872,13.26 3.872,13.26 3.872,13.26 2.483,11.871 2.483,11.871 2.483,11.871 3.207,10.37 3.207,10.37 3.025,10.038 2.869,9.689 2.759,9.319 2.759,9.319 1.2,8.774 1.2,8.774 1.2,8.774 1.2,6.81 1.2,6.81 1.2,6.81 2.757,6.266 2.757,6.266 2.867,5.895 3.023,5.546 3.204,5.213 3.204,5.213 2.48,3.709 2.48,3.709 2.48,3.709 3.869,2.32 3.869,2.32 3.869,2.32 5.376,3.047 5.376,3.047 5.706,2.868 6.053,2.714 6.42,2.605 6.42,2.605 6.969,1.035 6.969,1.035z" Stretch="Fill"/>
+            </Canvas>
+        </Grid>
+    </DataTemplate>
+
+    <DataTemplate x:Key="DataTemplate_Snapshot">
+        <Grid Width="25" Height="20">
+            <Canvas x:Name="icons_play" ClipToBounds="True" HorizontalAlignment="Stretch" Height="Auto" UseLayoutRounding="False" VerticalAlignment="Stretch" Width="Auto">
+                <Path x:Name="形状_1"  Fill="White" HorizontalAlignment="Center" VerticalAlignment="Center" Width="Auto" Height="Auto"  Data="F1M10.492,7.589C12.962,7.589 14.965,9.592 14.965,12.062 14.965,14.533 12.962,16.536 10.492,16.536 8.021,16.536 6.018,14.533 6.018,12.062 6.018,9.592 8.021,7.589 10.492,7.589z M10.492,6.196C7.253,6.196 4.626,8.823 4.626,12.062 4.626,15.302 7.253,17.929 10.492,17.929 13.732,17.929 16.358,15.302 16.358,12.062 16.358,8.823 13.732,6.196 10.492,6.196z M8.272,1.938C8.272,1.938 11.505,1.938 11.505,1.938 12.057,1.938 12.595,2.27 12.711,2.698 12.711,2.698 13.138,3.917 13.138,3.917 13.138,3.917 22.058,3.917 22.058,3.917 23.163,3.917 24.058,4.812 24.058,5.917 24.058,5.917 24.058,18.083 24.058,18.083 24.058,19.188 23.163,20.083 22.058,20.083 22.058,20.083 4,20.083 4,20.083 2.895,20.083 2,19.188 2,18.083 2,18.083 2,5.917 2,5.917 2,4.812 2.895,3.917 4,3.917 4,3.917 6.636,3.917 6.636,3.917 6.636,3.917 7.065,2.698 7.065,2.698 7.181,2.27 7.72,1.938 8.272,1.938z" Stretch="Fill" />
+            </Canvas>
+        </Grid>
+    </DataTemplate>
+    <DataTemplate x:Key="DataTemplate_Adjust">
+    	<Grid>
+    		<Canvas x:Name="set" HorizontalAlignment="Left" Height="25" UseLayoutRounding="False" VerticalAlignment="Top" Width="25">
+    			<Canvas x:Name="Layer_1" Height="22.249" Canvas.Left="1.251" Canvas.Top="1.25" Width="22.248">
+    				<Path Data="F1M19.83196006476,21.75431684254C18.77046342516,21.75431684254,17.90956740136,20.89162653774,17.90956740136,19.83192417914C17.90956740136,19.31804210074,18.10837373616,18.83430394314,18.47297163536,18.47257689354C18.83541639736,18.10905556294,19.31700141776,17.90917265954,19.83196006476,17.90917265954C20.89058585476,17.90917265954,21.75327615956,18.77114525194,21.75327615956,19.83192417914C21.75327615956,20.89162653774,20.89058585476,21.75431684254,19.83196006476,21.75431684254 M19.83196006476,16.16333724654L19.83052463996,16.16333724654C19.76198310576,16.16333724654,19.69523585256,16.17015551434,19.62812974316,16.17374407634L12.69502795916,9.24136000474C12.20949552056,8.75546870994,11.50434308756,8.62376848454,10.89392869136,8.83262279294L11.97588013436,5.66176940974C12.15387280956,5.13963363874,11.97336814096,4.36952823354,11.58365030776,3.97909268794L9.31747340476,1.71219807254C8.92632014676,1.32140367074,8.15621474156,1.14125785834,7.63479668296,1.31925053354L6.27580825356,1.78325160014C6.05331740956,1.85897025834,5.91228692296,1.98564649694,5.87532473436,2.14282551254C5.83836254576,2.29821024714,5.90833950476,2.47476749754,6.07592535016,2.64091791814L7.53575237176,4.09607980914C8.04963445016,4.61247388094,8.04819902536,5.45291510134,7.53288152216,5.96823260454L5.96862734636,7.53248678034C5.71993999976,7.78081527074,5.38835687096,7.91789833914,5.03524237016,7.91789833914C4.67818045116,7.91789833914,4.34516189756,7.78009755834,4.09503912616,7.52961593074L2.64131265996,6.07553060834C2.47408567076,5.90938018774,2.29788727656,5.83760894774,2.14250254196,5.87492999254C1.98711780736,5.91225103734,1.86044156876,6.05364038014,1.78436405436,6.27505465554L1.31928641916,7.63404308494C1.14165260016,8.15833199314,1.32179841256,8.92879625454,1.71187510196,9.31779637534L3.97948742976,11.58361442214C4.36920526296,11.97404996774,5.13787524336,12.15347806774,5.65821673336,11.97692081734L8.83337639096,10.89317509334C8.62416322636,11.50466605814,8.75586345176,12.21017734734,9.24103703416,12.69535092974L16.17413881816,19.62845271374C16.16983254376,19.69591767934,16.16337313216,19.76302378874,16.16337313216,19.83192417914C16.16337313216,21.85659085954,17.80549910336,23.49943454314,19.83052463996,23.49943454314C21.85590903276,23.49943454314,23.49911157256,21.85659085954,23.49911157256,19.83192417914C23.49911157256,17.80546321774,21.85698560136,16.16333724654,19.83196006476,16.16333724654" Fill="White" Height="22.249" Canvas.Left="0" Stretch="Fill" Canvas.Top="0" Width="22.248"/>
+    			</Canvas>
+    		</Canvas>
+    	</Grid>
+    </DataTemplate>
+    <DataTemplate x:Key="DataTemplate_ResetLayout">
+    	<Grid Width="19" Height="19" HorizontalAlignment="Center" VerticalAlignment="Center">
+    		<Grid.RowDefinitions>
+    			<RowDefinition Height="*"/>
+    			<RowDefinition Height="*"/>
+    		</Grid.RowDefinitions>
+    		<Grid.ColumnDefinitions>
+    			<ColumnDefinition Width="*"/>
+    			<ColumnDefinition Width="*"/>
+    		</Grid.ColumnDefinitions>
+    		<Rectangle Fill="#FFFFFFFF" Grid.RowSpan="2" Margin="1"/>
+    		<Rectangle Grid.Column="1" Fill="#FFFFFFFF" Margin="1"/>
+    		<Rectangle Grid.Column="1" Fill="#FFFFFFFF" Grid.Row="1" Margin="1"/>
+    	</Grid>
+    </DataTemplate>
+    <DataTemplate x:Key="DataTemplate_SimpleMode">
+    	<Grid Width="20" Height="20" HorizontalAlignment="Center" VerticalAlignment="Center">
+    		<Border BorderBrush="White" BorderThickness="0,0,4,4" Width="14" Height="14" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,2"/>
+    		<Rectangle Fill="#FFFFFFFF" Height="4" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Width="16" StrokeThickness="0" HorizontalAlignment="Stretch" Margin="0.75,5.75,3.25,0">
+    			<Rectangle.RenderTransform>
+    				<TransformGroup>
+    					<ScaleTransform/>
+    					<SkewTransform/>
+    					<RotateTransform Angle="43.668"/>
+    					<TranslateTransform/>
+    				</TransformGroup>
+    			</Rectangle.RenderTransform>
+    		</Rectangle>
+    		<Border BorderBrush="White" BorderThickness="0,0,0,1" Width="14" Height="18" CornerRadius="0" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+    	</Grid>
+    </DataTemplate>
+    <DataTemplate x:Key="DataTemplate_CompleteMode">
+    	<Grid Width="20" Height="20" HorizontalAlignment="Center" VerticalAlignment="Center">
+    		<Border BorderBrush="White" BorderThickness="4,4,0,0" Width="14" Height="14" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,2,0,0"/>
+    		<Rectangle Fill="#FFFFFFFF" Height="Auto" VerticalAlignment="Stretch" RenderTransformOrigin="0.5,0.5" Width="16" StrokeThickness="0" HorizontalAlignment="Stretch" Margin="2.25,8.75,1.75,7.25">
+    			<Rectangle.RenderTransform>
+    				<TransformGroup>
+    					<ScaleTransform/>
+    					<SkewTransform/>
+    					<RotateTransform Angle="43.668"/>
+    					<TranslateTransform/>
+    				</TransformGroup>
+    			</Rectangle.RenderTransform>
+    		</Rectangle>
+    		<Border BorderBrush="White" BorderThickness="0,1,0,0" Width="14" Height="18" CornerRadius="0" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+    	</Grid>
+    </DataTemplate>
+    <DataTemplate x:Key="DataTemplate_Apply">
+    	<Grid Width="20" Height="20" HorizontalAlignment="Center" VerticalAlignment="Center">
+    		<Path x:Name="check" Data="M-1.4171232,9.0843163 L3.6663334,15.167 14.49834,6.5014005 12.674693,4.1482044 4.5826421,10.750714 1.4426865,6.7639355 z" Stretch="Fill" Stroke="Black" StrokeThickness="0" Fill="White" HorizontalAlignment="Stretch" Height="Auto" VerticalAlignment="Stretch" Width="Auto" Margin="2"/>
+    	</Grid>
+    </DataTemplate>
+	
+	<DataTemplate x:Key="DataTemplate_Rename">
+		<Grid Width="20" Height="20" >	
+			<Path   Data="F1M2.031,14.094C2.031,14.094 14.031,14.094 14.031,14.094 14.549,14.094 14.969,14.513 14.969,15.031 14.969,15.549 14.549,15.969 14.031,15.969 14.031,15.969 2.031,15.969 2.031,15.969 1.513,15.969 1.094,15.549 1.094,15.031 1.094,14.513 1.513,14.094 2.031,14.094z M10.932,2.088C11.042,1.978 11.221,1.978 11.331,2.088 11.331,2.088 14.323,5.08 14.323,5.08 14.433,5.191 14.433,5.369 14.323,5.479 14.323,5.479 7.316,12.486 7.316,12.486 6.755,13.048 3.102,13.309 3.102,13.309 3.102,13.309 3.314,9.706 3.925,9.095 3.925,9.095 10.932,2.088 10.932,2.088z"   Height="Auto" Width="Auto" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Stretch="Fill" Fill="White" Margin="2"/>				
+		</Grid>
+</DataTemplate>
+
+    <DataTemplate x:Key="DataTemplate_Pin">
+        <Path x:Name="形状_2" Data="F1M6.994,10.969C6.994,10.969 6.994,14.906 6.994,14.906 6.994,14.906 4.98,14.906 4.98,14.906 4.98,14.906 4.98,10.969 4.98,10.969 4.98,10.969 1,10.969 1,10.969 1,10.969 1,9 1,9 1,9 2.969,9 2.969,9 2.969,9 2.969,1.969 2.969,1.969 2.969,1.969 9,1.969 9,1.969 9,1.969 9,9 9,9 9,9 11,9 11,9 11,9 11,10.969 11,10.969 11,10.969 6.994,10.969 6.994,10.969z" Height="15" Canvas.Left="2" Canvas.Top="1" Width="13" HorizontalAlignment="Center" VerticalAlignment="Center" Stretch="Fill" Fill="White"/>
+    </DataTemplate>
+    <DataTemplate x:Key="DataTemplate_Save">
+    	<Grid>
+    		<Path Data="F1M4.969,18C4.969,18 17.062,18 17.062,18 17.062,18 17.062,18.969 17.062,18.969 17.062,18.969 4.969,18.969 4.969,18.969 4.969,18.969 4.969,18 4.969,18z M4.969,16C4.969,16 17.062,16 17.062,16 17.062,16 17.062,16.969 17.062,16.969 17.062,16.969 4.969,16.969 4.969,16.969 4.969,16.969 4.969,16 4.969,16z M4.969,14C4.969,14 17.062,14 17.062,14 17.062,14 17.062,14.969 17.062,14.969 17.062,14.969 4.969,14.969 4.969,14.969 4.969,14.969 4.969,14 4.969,14z M4.031,12.055C4.031,12.055 4.031,20 4.031,20 4.031,20 17.944,20 17.944,20 17.944,20 17.944,12.055 17.944,12.055 17.944,12.055 4.031,12.055 4.031,12.055z M13.001,4.039C13.001,4.039 15.004,4.039 15.004,4.039 15.004,4.039 15.004,9.012 15.004,9.012 15.004,9.012 13.001,9.012 13.001,9.012 13.001,9.012 13.001,4.039 13.001,4.039z M6.004,2.947C6.004,2.947 6.004,8.817 6.004,8.817 6.004,9.484 6.545,10.025 7.212,10.025 7.212,10.025 14.179,10.025 14.179,10.025 14.847,10.025 16.013,9.484 16.013,8.817 16.013,8.817 16.013,2.947 16.013,2.947 16.013,2.947 6.004,2.947 6.004,2.947z M16.639,1.974C17.754,2.018 19.985,2.543 19.985,6.047 19.985,11.634 19.985,20.98 19.985,20.98 19.985,20.98 17.944,20.98 17.944,20.98 17.944,20.98 17.944,20.969 17.944,20.969 17.944,20.969 4.031,20.969 4.031,20.969 4.031,20.969 4.031,20.98 4.031,20.98 4.031,20.98 1.99,20.98 1.99,20.98 1.99,20.98 1.99,1.999 1.99,1.999 1.99,1.999 16.019,1.999 16.019,1.999 16.019,1.999 16.267,1.96 16.639,1.974z" Height="22" Width="22" Fill="White"/>
+    	</Grid>
+    </DataTemplate>
+    <DataTemplate x:Key="DataTemplate_Clear">
+    	<Grid Width="22" Height="22">
+		
+    		<Path Data="F1M16.881,10.213C16.211,10.213 15.668,10.756 15.668,11.425 15.668,11.425 15.668,20.277 15.668,20.277 15.668,20.947 16.211,21.49 16.881,21.49 17.55,21.49 18.093,20.947 18.093,20.277 18.093,20.277 18.093,11.425 18.093,11.425 18.093,10.756 17.55,10.213 16.881,10.213z M11.788,10.213C11.118,10.213 10.575,10.756 10.575,11.425 10.575,11.425 10.575,20.277 10.575,20.277 10.575,20.947 11.118,21.49 11.788,21.49 12.458,21.49 13.001,20.947 13.001,20.277 13.001,20.277 13.001,11.425 13.001,11.425 13.001,10.756 12.458,10.213 11.788,10.213z M6.695,10.213C6.026,10.213 5.483,10.756 5.483,11.425 5.483,11.425 5.483,20.277 5.483,20.277 5.483,20.947 6.026,21.49 6.695,21.49 7.365,21.49 7.908,20.947 7.908,20.277 7.908,20.277 7.908,11.425 7.908,11.425 7.908,10.756 7.365,10.213 6.695,10.213z M3.142,8.637C3.142,8.637 20.652,8.637 20.652,8.637 20.652,8.637 20.652,16.903 20.652,21.213 20.652,23.36 18.675,23.915 17.851,23.915 14.72,23.915 8.839,23.915 5.777,23.915 4.966,23.915 3.142,23.083 3.142,21.109 3.142,16.88 3.142,8.637 3.142,8.637z M11.934,1.798C13.139,1.798,14.116,2.775,14.116,3.98L14.07,4.09 15.794,4.09C16.988,4.09 18.073,4.09 18.942,4.09 22.354,4.09 22.18,7.909 22.18,7.909 22.18,7.909 1.76,7.909 1.76,7.909 1.76,7.909 1.627,4.09 4.907,4.09 5.818,4.09 6.933,4.09 8.148,4.09L9.797,4.09 9.751,3.98C9.751,2.775,10.728,1.798,11.934,1.798z" Height="20" Width="18" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Stretch="Fill" Fill="White"/>
+    			
+	
+    	</Grid>
+    </DataTemplate>
+
+    <DataTemplate x:Key="DataTemplate_OriginalSize">
+        <Grid Width="20" Height="20" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Border BorderBrush="White" BorderThickness="1"/>
+            <Border BorderBrush="White" BorderThickness="2,2,0,0" Width="8" Height="8" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="2,2,0,0"/>
+            <Border BorderBrush="White" BorderThickness="0,0,2,2" Width="8" Height="8" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,2,2"/>
+        </Grid>
+    </DataTemplate>
+    <DataTemplate x:Key="DataTemplate_Visible">
+    	<Grid Width="20" Height="20" HorizontalAlignment="Center" VerticalAlignment="Center">
+    		<Ellipse Fill="{x:Null}" Stroke="White" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0,5" StrokeThickness="2"/>
+    		<Ellipse Fill="White" Stroke="White" HorizontalAlignment="Center" VerticalAlignment="Center" Width="8" Height="8" StrokeThickness="0"/>
+    		<Border BorderBrush="White" BorderThickness="1"/>
+    	</Grid>
+    </DataTemplate>
+    <DataTemplate x:Key="DataTemplate_TimeInfoVisible">
+    	<Grid Width="20" Height="20" HorizontalAlignment="Center" VerticalAlignment="Center">
+    		<Rectangle Fill="White" Height="2" Stroke="White" StrokeThickness="0" VerticalAlignment="Center" HorizontalAlignment="Right" Width="10" Margin="0,0,2,0"/>
+    		<Rectangle Fill="White" Height="8" Stroke="White" StrokeThickness="0" VerticalAlignment="Top" HorizontalAlignment="Center" Width="2" Margin="0,4,0,0"/>
+    		<Border BorderBrush="White" BorderThickness="1" CornerRadius="10"/>
+    	</Grid>
+    </DataTemplate>
+    <DataTemplate x:Key="DataTemplate_About">
+    	<Grid Width="18" Height="18">
+
+    		<Path HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="Auto" Height="Auto"  Data="F1M7.572,10.92C7.271,10.92 7.018,11.017 6.811,11.21 6.603,11.403 6.5,11.635 6.5,11.904 6.5,12.166 6.603,12.394 6.811,12.587 7.018,12.78 7.271,12.877 7.572,12.877 7.869,12.877 8.123,12.781 8.334,12.59 8.545,12.398 8.65,12.17 8.65,11.904 8.65,11.631 8.545,11.398 8.334,11.207 8.123,11.016 7.869,10.92 7.572,10.92z M7.836,3.502C7.039,3.502 6.291,3.697 5.592,4.088 5.592,4.088 5.592,5.893 5.592,5.893 6.225,5.346 6.908,5.072 7.643,5.072 8.021,5.072 8.312,5.158 8.516,5.33 8.719,5.502 8.82,5.732 8.82,6.021 8.82,6.272 8.752,6.505 8.615,6.722 8.478,6.938 8.203,7.217 7.789,7.557 7.43,7.854 7.174,8.149 7.021,8.444 6.869,8.739 6.793,9.096 6.793,9.514 6.793,9.514 6.793,10.064 6.793,10.064 6.793,10.064 8.34,10.064 8.34,10.064 8.34,10.064 8.34,9.66 8.34,9.66 8.34,9.395 8.397,9.167 8.513,8.978 8.628,8.788 8.894,8.527 9.312,8.195 9.809,7.793 10.158,7.402 10.361,7.023 10.564,6.645 10.666,6.23 10.666,5.781 10.666,5.082 10.418,4.527 9.922,4.117 9.426,3.707 8.73,3.502 7.836,3.502z M7.99,1.094C11.81,1.094 14.906,4.19 14.906,8.01 14.906,11.83 11.81,14.927 7.99,14.927 4.17,14.927 1.073,11.83 1.073,8.01 1.073,4.19 4.17,1.094 7.99,1.094z" Stretch="Fill" Fill="White" />
+    		
+    	</Grid>
+    </DataTemplate>
+    <DataTemplate x:Key="DataTemplate_About2">
+    	<Grid Width="Auto" Height="Auto">
+
+    		<Path Data="M2.5770959,9.653 C2.9636105,9.6529999 3.2941648,9.7779421 3.5687593,10.026525 3.8433539,10.275108 3.9800001,10.578354 3.9800001,10.933658 3.9800001,11.279852 3.8433539,11.57659 3.5687593,11.826475 3.2941648,12.075058 2.9636105,12.2 2.5770959,12.2 2.185376,12.2 1.8561229,12.073756 1.586734,11.82257 1.3160438,11.571384 1.182,11.274646 1.182,10.933658 1.182,10.583559 1.3160438,10.281616 1.586734,10.03043 1.8561229,9.7792436 2.185376,9.6529999&#xd;&#xa;2.5770959,9.653 z M2.9202073,0 C4.0836054,0 4.9893383,0.26676273 5.6348032,0.80028725 6.2802676,1.3338118 6.603,2.0560226 6.603,2.9656172 6.603,3.5498919 6.4702634,4.0899234 6.2060913,4.5818071 5.9419192,5.0749927 5.4877514,5.5837932 4.8409854,6.1069076 4.2970253,6.5389326 3.9508687,6.8785667 3.8012146,7.1258099 3.6502591,7.3717518 3.5760828,7.6684438 3.5760828,8.0132831 3.5760828,8.013283 3.5760828,8.5390002 3.5760828,8.5390002 3.5760828,8.5390002 1.5629096,8.5390002&#xd;&#xa;1.5629095,8.5390002 1.5629096,8.5390002 1.5629096,7.8232961 1.5629095,7.8232961 1.5629096,7.279361 1.6618114,6.8148041 1.8596152,6.4309263 2.0587202,6.0470488 2.3918632,5.6631711 2.8590444,5.276691 3.3977991,4.8342557 3.7556678,4.4711986 3.9339513,4.1901221 4.112235,3.9077439 4.2007262,3.6045461 4.2007262,3.2779245 4.2007262,2.9018545 4.0692908,2.60256 3.8051187,2.3787398 3.5396453,2.1549196 3.1609553,2.0430098 2.6690487,2.0430098 1.7125637,2.0430098&#xd;&#xa;0.82374835,2.3995605 0,3.1113605 0,3.1113605 0,0.76255035 0,0.76255035 0.90963683,0.25374985 1.8830392,0 2.9202073,0 z" Fill="White" HorizontalAlignment="Stretch" Height="Auto" Margin="5.88,3.133,5.517,2.667" Stretch="Fill" VerticalAlignment="Stretch" Width="Auto"/>
+
+    		<Path HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="Auto" Height="Auto"  Data="M9.0006505,4.4408921E-16 C13.971373,4.4408921E-16 18,4.0286272 18,8.9993493 18,13.970072 13.971373,18 9.0006505,18 4.0299284,18 6.6613381E-16,13.970072 6.6613381E-16,8.9993493 6.6613381E-16,4.0286272 4.0299284,4.4408921E-16 9.0006505,4.4408921E-16 z" Stretch="Fill" Fill="{x:Null}" />
+    	</Grid>
+    </DataTemplate>
+    <DataTemplate x:Key="DataTemplateSF">
+    	<Grid>
+    		<Path Data="M18,6 L12,0 L12,3 L0,3 L0,9 L12,9 L12,12 z" Fill="#FFFFFFFF" Height="Auto" Margin="1,4" Stretch="Fill" VerticalAlignment="Stretch" Width="Auto"/>
+    	</Grid>
+    </DataTemplate>
+    <DataTemplate x:Key="DataTemplateSB">
+    	<Grid>
+    		<Path Data="M0,6 L6,0 L6,3 L18,3 L18,9 L6,9 L6,12 z" Fill="#FFFFFFFF" Height="Auto" Margin="1,4" Stretch="Fill" Width="Auto"/>
+    	</Grid>
+    </DataTemplate>
+
+</ResourceDictionary>

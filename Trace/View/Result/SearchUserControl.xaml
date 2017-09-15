@@ -1,0 +1,50 @@
+﻿<UserControl x:Class="Trace.View.Result.SearchUserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Trace.View.Result"
+             mc:Ignorable="d" 
+             d:DesignHeight="30" d:DesignWidth="300" Loaded="searchUserControl_Loaded">
+    <UserControl.Resources>
+        <BooleanToVisibilityConverter x:Key="BoolToVisConverter" />
+    </UserControl.Resources>
+    <Grid>
+        <StackPanel Orientation="Horizontal" Margin="2">
+            <ComboBox Name="searchComboBox" Grid.Column="1" Height="auto" Margin="0, 0, 5, 0" VerticalAlignment="Center" Width="80" SelectedIndex="0"
+                      DropDownClosed="searchComboBox_Closed">
+                <ComboBoxItem Content="X(mm)" Tag="PositionX"/>
+                <ComboBoxItem Content="Y(mm)" Tag="PositionY"/>
+                <ComboBoxItem Content="测量角度" Tag="MeasureAngle"/>
+                <ComboBoxItem Content="光阑" Tag="Stop"/>
+                <ComboBoxItem Content="L" Tag="UpperL"/>
+                <ComboBoxItem Content="C" Tag="UpperC"/>
+                <ComboBoxItem Content="H" Tag="UpperH"/>
+                <ComboBoxItem Content="a" Tag="lowera"/>
+                <ComboBoxItem Content="b" Tag="lowerb"/>
+                <ComboBoxItem Content="Y" Tag="UpperY"/>
+                <ComboBoxItem Content="x" Tag="lowerx"/>
+                <ComboBoxItem Content="y" Tag="lowery"/>
+                <ComboBoxItem Content="R" Tag="UpperR"/>
+                <ComboBoxItem Content="G" Tag="UpperG"/>
+                <ComboBoxItem Content="B" Tag="UpperB"/>
+            </ComboBox>
+
+            <ComboBox Name="compareComboBox" Margin="0, 0, 5, 0" VerticalAlignment="Center" SelectedIndex="0">
+                <ComboBoxItem Content="="/>
+                <ComboBoxItem Content="&lt;"/>
+                <ComboBoxItem Content=">"/>
+                <ComboBoxItem Content="!="/>
+            </ComboBox>
+
+            <TextBox Name="searchText" Width="100" Margin="0, 0, 5, 0" VerticalAlignment="Center" Visibility="{Binding Path=SearchTextVis, Converter={StaticResource BoolToVisConverter} }"/>
+            <ComboBox Name="taskComboBox" Width="100" Margin="0, 0, 5, 0" VerticalAlignment="Center" Visibility="{Binding Path=TaskComboBoxVis, Converter={StaticResource BoolToVisConverter} }"/>
+            
+            <ComboBox Name="logicComboBox" SelectedIndex="0" Margin="0, 0, 5, 0" VerticalAlignment="Center" Width="50">
+                <ComboBoxItem Content="And"/>
+                <ComboBoxItem Content="Or"/>
+            </ComboBox>
+
+        </StackPanel>
+    </Grid>
+</UserControl>
